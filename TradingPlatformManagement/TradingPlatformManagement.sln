@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2018
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TradingPlatformManagement", "TradingPlatformManagement\TradingPlatformManagement.csproj", "{BDB1FE8B-71C7-4709-B0EF-68BD57BAC39F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TradingPlatformManagement", "TradingPlatformManagement\TradingPlatformManagement.csproj", "{81DEF99B-2F13-47F0-B620-F6C660DFD637}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{BDB1FE8B-71C7-4709-B0EF-68BD57BAC39F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BDB1FE8B-71C7-4709-B0EF-68BD57BAC39F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BDB1FE8B-71C7-4709-B0EF-68BD57BAC39F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BDB1FE8B-71C7-4709-B0EF-68BD57BAC39F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81DEF99B-2F13-47F0-B620-F6C660DFD637}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81DEF99B-2F13-47F0-B620-F6C660DFD637}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81DEF99B-2F13-47F0-B620-F6C660DFD637}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81DEF99B-2F13-47F0-B620-F6C660DFD637}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {92D68D9B-4563-4B43-ACF1-E085840DCDFC}
+		SolutionGuid = {C11B11F4-DA3A-4DDE-8FE7-1DAF3F06EB92}
 	EndGlobalSection
 EndGlobal

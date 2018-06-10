@@ -1,24 +1,1321 @@
-﻿body {
-    padding-top: 50px;
+﻿html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.flexbox-parent {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* align items in Main Axis */
+    align-items: stretch; /* align items in Cross Axis */
+    align-content: stretch; /* Extra space in Cross Axis */
+    flex: 1; /* same as flex: 1 1 auto; */
+}
+
+.form-control {
+    padding-right: 1px !important;
+}
+
+
+div.k-edit-form-container {
+    width: auto;
+}
+
+.loading-spinner {
+    display: none;
+    position: fixed;
+    top: 350px;
+    left: 50%;
+    z-index: 99999;
+}
+
+.k-grid.druggable-grid tbody tr {
+    cursor: move;
+}
+
+.preliveColor {
+    color: darkgreen;
+}
+
+.liveColor {
+    color: indianred;
+}
+
+.statusLocked {
+    color: red;
+}
+
+.colorRed {
+    color: red;
+}
+
+.statusUnlocked {
+    color: green;
+}
+
+#feedresult-content-wrapper {
+    display: table-cell;
+    vertical-align: top;
+}
+
+#sidebar-personfilter-wrapper {
+    display: table-cell;
+    vertical-align: top;
+    padding-right: 10px;
+}
+
+#sidebar-eventfilter-wrapper {
+    display: table-cell;
+    vertical-align: top;
+    padding-right: 10px;
+}
+
+#betlist-content-wrapper {
+    display: table-cell;
+    vertical-align: top;
+    overflow: hidden;
+    width: 100%;
+}
+
+#betlist-content {
+    display: flex;
+}
+
+#betlist-content-container {
+    overflow: hidden;
+}
+
+#betListGrid {
+    overflow: auto;
+}
+
+#betsFilter {
+    min-width: 260px;
+    max-width: 260px;
+}
+
+#personFilter {
+    min-width: 260px;
+    max-width: 260px;
+}
+
+#personParentItems {
+    min-width: 260px;
+}
+
+.statusOdd_W {
+    color: darkgreen;
+}
+
+.statusOdd_O {
+    color: blue;
+}
+
+.statusOdd_L {
+    color: red;
+}
+
+.statusBet_S {
+    color: darkgreen;
+}
+
+.statusBet_C {
+    color: blue;
+}
+
+.statusBet_N {
+    color: red;
+}
+
+#hidden-panel-title {
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+#hidden-panel {
+    display: none;
+}
+
+.colorBlue {
+    color: blue;
+}
+
+.statusSelection_HalfWin {
+    color: forestgreen;
+}
+
+.statusSelection_Lost {
+    color: red;
+}
+
+.statusSelection_Open {
+    color: blue;
+}
+
+.statusSelection_Pending {
+    color: purple;
+}
+
+.statusSelection_Suspended {
+    color: pink;
+}
+
+.statusSelection_Void {
+    color: yellow;
+}
+
+.statusSelection_Win {
+    color: darkseagreen;
+}
+
+.timeLI {
+    top: 5px;
+    font-size: 13px;
+}
+
+.timeclock {
+    margin-left: 8px;
+    margin-right: 4px;
+}
+
+#bonus-template-wrapper {
+    display: table-cell;
+    vertical-align: top;
+    padding-right: 10px;
+    min-width: 260px;
+    max-width: 260px;
+}
+
+#bonuses-content-wrapper {
+    display: table-cell;
+    vertical-align: top;
+}
+
+#FirstName,
+#LastName,
+#Birthday,
+#Email,
+#StreetAddress,
+#TownCity,
+#StateCountry,
+#HomePhone,
+#WorkPhone,
+#MobilePhone,
+#Note {
+    width: 100%;
+}
+
+#clientIdSearchBox,
+#userNameSerachBox,
+#fullNameSearchBox {
+    width: 100%;
+}
+
+.statusDisabled {
+    color: red;
+}
+
+.statusEnabled {
+    color: green;
+}
+
+/*Styles for internal structure grids*/
+
+#internalCompCategoryRel .k-grid .k-header,
+#internalCompChampRel .k-grid .k-header {
+    display: none;
+}
+
+#internalCompCategoryRel,
+#internalCompChampRel {
+    border: none !important;
+}
+
+.border-right {
+    border-right: 1px solid black;
+}
+
+
+a.btn.btn-action-disable span {
+    display: none;
+}
+
+a.btn.btn-action-disable {
+    height: 21px;
+    width: 100px;
+    margin: 0px;
+    box-shadow: 0 0 1px #ccc;
+    border: 1px solid #ff0000;
+    background: #ff0000;
+}
+
+a.btn.btn-action-exclude span {
+    display: none;
+}
+
+a.btn.btn-action-exclude {
+    height: 21px;
+    width: 100px;
+    margin: 0px;
+    box-shadow: 0 0 1px #ccc;
+    border: 1px solid black;
+    background: #ff0000;
+}
+
+a.btn.btn-action-enable {
+    height: 21px;
+    width: 100px;
+    margin: 0px;
+    box-shadow: 0 0 1px #ccc;
+    border: 1px solid #26B99A;
+}
+
+a.btn.btn-action-include span {
+    display: none;
+}
+
+a.btn.btn-action-include {
+    height: 21px;
+    width: 100px;
+    margin: 0px;
+    box-shadow: 0 0 1px #ccc;
+    border: 1px solid black;
+    background: #26B99A;
+}
+
+a.btn.btn-action-update span {
+    display: none
+}
+
+a.btn.btn-action-update {
+    height: 21px;
+    width: 100px;
+    box-shadow: 0 0 1px #ccc;
+    border: 1px solid black;
+    margin: 0 5px 0 0;
+}
+
+a.btn.btn-action-cancel span {
+    display: none
+}
+
+a.btn.btn-action-cancel {
+    height: 21px;
+    width: 100px;
+    margin: 0px;
+    box-shadow: 0 0 1px #ccc;
+    border: 1px solid black;
+    background: #979A9A;
+    color: white;
+}
+
+a.btn.btn-action-rel span {
+    display: none
+}
+
+a.btn.btn-action-rel {
+    height: 21px;
+    width: 100px;
+    margin: 0px;
+    box-shadow: 0 0 1px #ccc;
+    border: 1px solid black;
+    background: #7e7e7e;
+    color: white;
+    margin: 0 5px 0 5px;
+}
+
+a.btn.btn-action-match span {
+    display: none
+}
+
+a.btn.btn-action-match {
+    height: 17px;
+    width: 70px;
+    margin: 0px;
+    box-shadow: 0 0 1px #ccc;
+    border: 1px solid black;
+    background: green;
+    color: white;
+    margin: 0 5px 0 5px;
+}
+
+a.btn.btn-matched span {
+    display: none
+}
+
+a.btn.btn-matched {
+    height: 17px;
+    width: 70px;
+    margin: 0px;
+    box-shadow: 0 0 1px #ccc;
+    border: 1px solid black;
+    background: #5c5c5c;
+    color: white;
+    margin: 0 5px 0 5px;
+}
+
+/*End of styles for internal structure grid*/
+
+ul .ulFeeds li {
+    margin: 3px;
+}
+
+/*Styles for configuration and sport menu*/
+
+.tree-item-panel.panel {
+    padding: 5px;
+    margin: 5px;
+    border: 1px solid #010101;
+}
+
+.tree-item-panel-title > div:first-child {
+    display: inline-block;
+}
+
+.tree-item-panel .btn-tall {
+    height: 73px
+}
+
+.tree-item-panel hr {
+    margin-top: 2px;
+    margin-bottom: 5px;
+}
+
+.tree-item-panel .btn-action {
+    min-width: 200px;
+}
+
+.tree-item-panel .label {
+    font-size: 150%
+}
+
+.tree-item-panel button {
+    margin-right: 0px;
+}
+
+.tree-item-panel .btn-group {
+    margin-bottom: 5px;
+    vertical-align: top;
+}
+
+.tree-item-panel .dropdown-menu.content-menu {
+    float: right;
+    left: auto;
+    right: 0;
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.3);
+}
+
+.category-tree-item-panel.panel {
+    color: #333;
+    background-color: #e8e8e8;
+    border: 1px solid #a9a9a9;
+}
+
+hr.champ-separator {
+    background-color: #383838;
+    height: 1px;
+    border: 0;
+}
+
+/*End styles for configurations*/
+
+/*Styles for Margin pages*/
+
+.setting-per-number-of-participants-panel.panel {
+    color: #333;
+    background-color: #e7ecf1;
+    border: 1px solid #aaaaaa;
+}
+
+.setting-per-number-of-participants-child-panel.panel {
+    color: #666;
+    background-color: #e1e1e1;
+    border: 1px solid black;
+}
+
+.configuration-margin-content {
+    margin: 0 0 0 0px;
+}
+
+.btn.btn-info.btn-tall.btn-dark.btn-save-margin {
+    padding: 0 0;
+    border-radius: 5px;
+    display: inline-block;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 15px;
+}
+
+    .btn.btn-info.btn-tall.btn-dark.btn-save-margin span {
+        cursor: pointer;
+        display: inline-block;
+        transition: 0.5s;
+        position: relative;
+    }
+
+        .btn.btn-info.btn-tall.btn-dark.btn-save-margin span:after {
+            content: '\00bb';
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            right: -20px;
+            transition: 0.5s;
+        }
+
+    .btn.btn-info.btn-tall.btn-dark.btn-save-margin:hover span {
+        padding-right: 25px;
+    }
+
+.btn.btn-info.btn-tall.btn-dark:hover.btn-save-margin span:after {
+    opacity: 1;
+    right: 0;
+}
+
+.btn.btn-info.btn-tall.btn-success.btn-save-margin {
+    padding: 0 0;
+    border-radius: 5px;
+    display: inline-block;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 15px;
+}
+
+.btn.btn-dark.btn-save-margin-disabled {
+    margin: 15px;
+    border-radius: 5px;
+    padding: 0;
+    display: inline-block;
+}
+
+.btn.btn-action-update-margin span {
+    display: none
+}
+
+.btn.btn-action-update-margin {
+    height: 20px;
+    width: 100px;
+    box-shadow: 0 0 1px #ccc;
+    border: 1px solid black;
+    margin: 0 5px 0 0;
+}
+
+    .btn.btn-action-update-margin:hover {
+        border: 1px solid black;
+    }
+
+
+
+.btn.btn-action-set-default-margin span {
+    display: none
+}
+
+.btn.btn-action-set-default-margin {
+    height: 20px;
+    width: 100px;
+    box-shadow: 0 0 1px #ccc;
+    border: 1px solid black;
+    margin: 5px 5px 0 0;
+    background-color: #5c5c5c;
+    color: white;
+}
+
+    .btn.btn-action-set-default-margin:hover {
+        border: 1px solid black;
+        background-color: #6c6c6c;
+        color: white;
+    }
+
+/*Reset to parent*/
+
+btn.btn-info.btn-tall.btn-success.btn-reset-to-parent {
+    padding: 0 0;
+    border-radius: 5px;
+    display: inline-block;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 15px;
+}
+
+.btn.btn-info.btn-tall.btn-success.btn-reset-to-parent span {
+    cursor: pointer;
+    display: inline-block;
+    transition: 0.5s;
+    position: relative;
+}
+
+    .btn.btn-info.btn-tall.btn-success.btn-reset-to-parent span:after {
+        content: '\00bb';
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -20px;
+        transition: 0.5s;
+    }
+
+.btn.btn-info.btn-tall.btn-success.btn-reset-to-parent:hover span {
+    padding-right: 25px;
+}
+
+.btn.btn-info.btn-tall.btn-success.btn-reset-to-parent span:after {
+    opacity: 1;
+    right: 0;
+}
+
+.btn.btn-info.btn-tall.btn-success.btn-reset-to-parent {
+    padding: 0 0;
+    border-radius: 5px;
+    display: inline-block;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 15px;
+}
+
+/*End styles for Margin pages*/
+/*event mapping:  feed mapping*/
+button.k-grid-manageEvents.btn.btn-manage-event span {
+    display: none;
+}
+
+button.k-grid-manageEvents.btn.btn-manage-event {
+    height: 21px;
+    width: 110px;
+    background: #afafaf;
+    margin: 1px;
+    float: left;
+    box-shadow: 0 0 1px #ccc;
+    -webkit-transition: all 0.5s ease-in-out;
+    border: 0px;
+    color: #000000;
+}
+
+    button.k-grid-manageEvents.btn.btn-manage-event:hover {
+        background: #8e8e8e;
+        color: black;
+    }
+
+.rectangle {
+    counter-reset: li;
+    list-style: none;
+    font: 14px "Trebuchet MS", "Lucida Sans";
+    padding: 0;
+    text-shadow: 0 1px 0 rgba(255,255,255,.5);
+}
+
+    .rectangle li {
+        position: relative;
+        display: block;
+        padding: .4em .4em .4em .8em;
+        margin: .5em 0 .5em 2.5em;
+        background: #D3D4DA;
+        color: #444;
+        text-decoration: none;
+        transition: all .3s ease-out;
+    }
+
+        .rectangle li:hover {
+            background: #DCDDE1;
+        }
+
+        .rectangle li:before {
+            content: counter(li);
+            counter-increment: li;
+            position: absolute;
+            left: -2.5em;
+            top: 50%;
+            margin-top: -1em;
+            background: #9097A2;
+            height: 2em;
+            width: 2em;
+            line-height: 2em;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .rectangle li:after {
+            position: absolute;
+            content: "";
+            border: .5em solid transparent;
+            left: -1em;
+            top: 50%;
+            margin-top: -.5em;
+            transition: all .3s ease-out;
+        }
+
+        .rectangle li:hover:after {
+            left: -.5em;
+            border-left-color: #9097A2;
+        }
+
+/*end*/
+
+/*style links in events management page*/
+
+a.k-grid-makeEventEnable.btn.btn-success.btn-action span {
+    display: none
+}
+
+a.k-grid-makeEventEnable.btn.btn-success.btn-action {
+    height: 21px;
+    width: 110px;
+    margin: 1px;
+    float: right;
+    box-shadow: 0 0 1px #ccc;
+    -webkit-transition: all 0.5s ease-in-out;
+    border: 0px;
+}
+
+    a.k-grid-makeEventEnable.btn.btn-success.btn-action:hover {
+        background: #16cb16;
+        color: #e7ecf1;
+    }
+
+a.k-grid-makeEventDisable.btn.btn-danger.btn-action span {
+    display: none;
+}
+
+a.k-grid-makeEventDisable.btn.btn-danger.btn-action {
+    height: 21px;
+    width: 110px;
+    margin: 1px;
+    float: right;
+    box-shadow: 0 0 1px #ccc;
+    -webkit-transition: all 0.5s ease-in-out;
+    border: 0px;
+}
+
+    a.k-grid-makeEventDisable.btn.btn-danger.btn-action:hover {
+        background: #ff0000;
+        color: #ffffff;
+    }
+
+a.k-grid-disabledGlobal.btn.btn-dark.btn-action span {
+    display: none;
+}
+
+a.k-grid-disabledGlobal.btn.btn-dark.btn-action {
+    height: 21px;
+    width: 110px;
+    margin: 1px;
+    float: right;
+    box-shadow: 0 0 1px #ccc;
+    -webkit-transition: all 0.5s ease-in-out;
+    border: 0px;
+    cursor: not-allowed;
+    background-color: #8a8a8a
+}
+
+a.k-grid-disabledInParent.btn.btn-default.btn-action span {
+    display: none;
+}
+
+a.k-grid-disabledInParent.btn.btn-default.btn-action {
+    height: 21px;
+    width: 110px;
+    margin: 1px;
+    float: right;
+    box-shadow: 0 0 1px #ccc;
+    -webkit-transition: all 0.5s ease-in-out;
+    border: 0px;
+    cursor: not-allowed;
+}
+
+/**/
+
+/*Risk groups*/
+.btn.btn-margins, .btn.btn-feeds, .btn.btn-limits {
+    height: 38px;
+    width: 120px;
+    border-color: black;
+    background-color: lightgrey;
+    border-width: 1px;
+}
+
+.btn.btn-clone {
+    height: 38px;
+    width: 120px;
+    border-color: black;
+    border-width: 1px;
+    background-color: #5d5d5d;
+    color: white;
+}
+
+
+.btn.btn-champs {
+    height: 38px;
+    width: 150px;
+    border-color: black;
+    background-color: lightgrey;
+    border-width: 1px;
+}
+
+.btn.btn-create-risk-group {
+    height: 38px;
+    width: 200px;
+    border-color: black;
+    background-color: lightgrey;
+    border-width: 1px;
+}
+
+.btn.btn-change-champ-risk-group {
+    height: 20px;
+    width: 150px;
+    border-color: black;
+    background-color: lightgrey;
+    border-width: 1px;
+}
+
+.k-colorpicker span.k-selected-color {
+    width: 300px;
+}
+
+.risk-group-color {
+    padding: 8px 10px 10px 100px;
+}
+
+.btn.btn-link {
+    color: black;
+    padding-left: 0px;
+}
+
+.risk-group {
+    padding: 8px 0px 10px 10px;
+}
+
+.k-select {
+    background-color: lightgrey;
+}
+
+.intSportsDDL, .intCategoriesDDL, .IntChampsDDL {
+    margin-bottom: 10px;
+}
+
+.intSportsDDL {
+    margin-top: 0px;
+}
+
+.btn.btn-quick-action {
+    margin-top: 30px;
+    border: none;
+}
+
+    .btn.btn-quick-action:hover {
+        -webkit-transform: scale(1.5);
+        background: none;
+    }
+
+.quick-arrow {
+    margin-left: 40px;
+}
+
+.glyphicon.glyphicon-arrow-right {
+    color: black;
+    font-size: 45px;
+}
+
+.risk-groups {
+    margin-top: 43px;
+    margin-left: 0px;
+}
+
+.btn.btn-manage-dis-champs {
+    background-color: #ccc;
+    border: 1px solid black;
+}
+
+.vert-line {
+    border-right: thick solid #ff0000;
+    height: 120px;
+    width: 3px;
+    padding-left: 80%
+}
+
+.dis-champs-block {
+    margin-left: 50px;
     padding-bottom: 20px;
 }
 
-/* Set padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+.risk-cell-template {
+    padding: 10px 10px 10px 7px;
 }
 
-/* Override the default bootstrap behavior where horizontal description lists 
-   will truncate terms that are too long to fit in the left column 
-*/
-.dl-horizontal dt {
-    white-space: normal;
+.btn.btn-action.btn-change-group span {
+    display: none
 }
 
-/* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-    max-width: 280px;
+.btn.btn-action.btn-change-group {
+    height: 21px;
+    width: 115px;
+    margin: 0px;
+    float: right;
+    background-color: green;
+    color: white;
+    border-radius: 4px;
+    margin-bottom: 3px;
+    border: 1px solid black;
+}
+
+.btn.k-grid-makeRiskChampDisable.btn-danger.btn-action-disable, .btn.k-grid-makeRiskChampEnable.btn-success.btn-action-enable {
+    border: 1px solid black;
+    width: 115px;
+}
+
+.btn.k-grid-disableAndOverride, .btn.k-grid-enableAndOverride {
+    border: 1px solid black !important;
+    width: 115px !important;
+}
+
+.risk-title-template {
+    padding: 10px 15px 10px 7px;
+}
+
+/**/
+/*Loader*/
+.spinner {
+    margin: 100px auto;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    text-align: center;
+    -webkit-animation: sk-rotate 2.0s infinite linear;
+    animation: sk-rotate 2.0s infinite linear;
+}
+
+.dot1, .dot2 {
+    width: 60%;
+    height: 60%;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    background-color: #333;
+    border-radius: 100%;
+    -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+    animation: sk-bounce 2.0s infinite ease-in-out;
+}
+
+.dot2 {
+    top: auto;
+    bottom: 0;
+    -webkit-animation-delay: -1.0s;
+    animation-delay: -1.0s;
+}
+
+@-webkit-keyframes sk-rotate {
+    100% {
+        -webkit-transform: rotate(360deg)
+    }
+}
+
+@keyframes sk-rotate {
+    100% {
+        transform: rotate(360deg);
+        -webkit-transform: rotate(360deg)
+    }
+}
+
+@-webkit-keyframes sk-bounce {
+    0%, 100% {
+        -webkit-transform: scale(0.0)
+    }
+
+    50% {
+        -webkit-transform: scale(1.0)
+    }
+}
+
+@keyframes sk-bounce {
+    0%, 100% {
+        transform: scale(0.0);
+        -webkit-transform: scale(0.0);
+    }
+
+    50% {
+        transform: scale(1.0);
+        -webkit-transform: scale(1.0);
+    }
+}
+
+/* For DDL, that generate Kendo for boolean values.
+    For example DDL in grid column on EWS page. */
+.list-box, .tri-state {
+    color: #000;
+    background-color: #fff;
+}
+
+#newEWSSettings {
+    width: 100%;
+    height: 380px;
+}
+
+/*Header markets*/
+
+.btn.override-hm-btn {
+    margin: 0px 5px 10px 0px;
+    height: 35px;
+    width: 100px;
+    border: 1px solid black;
+    color: black;
+    background: gainsboro;
+    font-size: inherit;
+}
+
+    .btn.override-hm-btn:hover {
+        border: 1px solid black;
+        background: #ccc;
+    }
+
+.btn.set-default-hm-btn {
+    height: 35px;
+    width: 120px;
+    box-shadow: 0 0 1px #ccc;
+    border: 1px solid black;
+    margin: 5px 5px 0 5px;
+    background-color: #5c5c5c;
+    color: white;
+}
+
+    .btn.set-default-hm-btn:hover {
+        border: 1px solid black;
+        background-color: #6c6c6c;
+        color: white;
+    }
+/*End header markets*/
+
+/*NEW CONFIGURATION PAGE STYLES*/
+
+.btn.feeds-btn,
+.btn.margins-btn,
+.btn.limits-btn,
+.btn.sport-markets-btn,
+.btn.params-btn,
+.btn.highlights-btn,
+.btn.sport-menu-btn,
+.btn.conf-markets-btn,
+.btn.conf-eve-man-btn,
+.btn.conf-trans-man-btn,
+.btn.conf-market-gr-btn,
+.btn.fast-codes-btn {
+    height: 40px;
+    width: 100%;
+    box-shadow: 0 0 1px #ccc;
+    border: 0px solid black;
+    margin: 0 5px 0 0;
+    background-color: lightgray;
+}
+
+    .btn.feeds-btn:hover,
+    .btn.margins-btn:hover,
+    .btn.limits-btn:hover,
+    .btn.sport-markets-btn:hover,
+    .btn.params-btn:hover,
+    .btn.highlights-btn:hover,
+    .btn.sport-menu-btn:hover,
+    .btn.conf-markets-btn:hover,
+    .btn.conf-eve-man-btn:hover,
+    .btn.conf-trans-man-btn:hover,
+    .btn.conf-market-gr-btn:hover,
+    .btn.fast-codes-btn:hover {
+        border: 0px solid black;
+        background-color: #7d7d7d;
+        color: black;
+        transition: all .3s ease-in-out;
+    }
+
+.display-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menu-separator {
+    border-top: 1px solid #8c8b8b;
+}
+
+/*END*/
+
+/*INITIAL MAPPING*/
+
+.k-grid-initialManage span {
+    display: none;
+}
+
+.k-grid-initialManage {
+    height: 21px;
+    width: 110px;
+    background: #afafaf;
+    margin: 1px;
+    float: left;
+    box-shadow: 0 0 1px #ccc;
+    -webkit-transition: all 0.5s ease-in-out;
+    border: 0px;
+    color: #000000;
+}
+
+    .k-grid-initialManage:hover {
+        background: #8e8e8e;
+        color: black;
+    }
+
+.hor-line hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+    background-color: black;
+    margin-top: 1px;
+}
+
+.k-grid-matchInitialEntityMapping.btn-success,
+.k-grid-confirmInitialEntity.btn-success,
+.k-grid-rejectSport.btn-danger {
+    height: 19px;
+    width: 60px;
+    margin-bottom: 0px;
+    box-shadow: 0 0 1px #ccc;
+    border: 1px solid black;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn.btn-success.btn-add-match {
+    padding: 0 0;
+    border-radius: 5px;
+    display: inline-block;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 15px;
+    border: 1px solid black;
+}
+
+/*Configuration limits styles*/
+/*fixes radio-button issue*/
+.k-animation-container, .k-widget, .k-widget *, .k-animation-container *, .k-widget *:before, .k-animation-container *:after, .k-block .k-header, .k-list-container {
+    box-sizing: inherit;
+}
+
+.k-radio-label:before {
+    box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+}
+
+.k-radio-label {
+    font-weight: 100;
+    margin-top: 7px;
+}
+
+.limits-per-eventType-panel.panel {
+    color: #333;
+    background-color: #e7ecf1;
+    border: 1px solid #aaaaaa;
+}
+
+.btn.btn-quick-factor-action {
+    margin-top: 64px;
+    border: none;
+}
+
+.player-details.panel {
+    color: #333;
+    background-color: #e7ecf1;
+    border: 1px solid #aaaaaa;
+    height: 100px;
+}
+
+.player-actions.panel {
+    color: #333;
+    background-color: #e7ecf1;
+    border: 1px solid #aaaaaa;
+    height: 100px;
+}
+
+.player-commentaries.panel {
+    color: #333;
+    background-color: #f3f3f3;
+    border: 1px solid #aaaaaa;
+}
+
+.k-colorpicker.player-actions span.k-selected-color {
+    width: 100px;
+}
+
+.readonly-text {
+    background-color: #ececec;
+}
+
+/*Bet List*/
+.div-status-open {
+    color: white;
+    background: #75aad8;
+    width: 65px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.div-status-other {
+    color: white;
+    background: #999;
+    width: 65px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.div-status-pending {
+    display: block;
+    line-height: 20px;
+    color: white;
+    background: #d27e7e;
+    width: 65px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.cut-text {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 160px;
+    height: 1.2em;
+    white-space: nowrap;
+}
+
+/*Bet details*/
+.toggle.ios, .toggle-on.ios, .toggle-off.ios {
+    border-radius: 20px;
+}
+
+    .toggle.ios .toggle-handle {
+        border-radius: 20px;
+    }
+
+.bet-details-cell-template {
+    padding: 0px 0px 0px 7px;
+}
+
+.btn.accept {
+    height: 21px;
+    width: 100px;
+    margin: 0px;
+    box-shadow: 0 0 1px #ccc;
+    border: 1px solid black;
+    background: #26B99A;
+}
+
+.btn.reject {
+    height: 21px;
+    width: 100px;
+    margin: 0px;
+    box-shadow: 0 0 1px #ccc;
+    border: 1px solid black;
+    background: #ff0000;
+}
+
+/*Cashout*/
+.cashout-set-default-button span {
+    display: none;
+}
+
+a.k-grid-matchMapping.btn.btn-success span {
+    display: none;
+}
+
+a.k-grid-rejectMapping.btn.btn-danger span {
+    display: none;
+}
+
+a.k-grid-unrejectMapping.btn.btn-info span {
+    display: none;
+}
+
+a.k-grid-createNewMapping.btn.btn-dark span {
+    display: none;
+}
+
+a.k-grid-unmatchCompetitor.btn.btn-primary span {
+    display: none;
+}
+
+a.k-grid-searchCompetitors.btn.btn-dark span {
+    display: none;
+}
+
+.ddl-progress {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.ddl-progress .k-progressbar {
+    margin-bottom: 1.5em;
+    width: 100%;
+ }
+
+.result-item-panel.panel {
+    cursor: default;
+    padding: 5px;
+    margin: 5px;
+    border: 1px solid #010101;
+    background: #efefef
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: inherit;
+    transition: all .5s;
+}
+
+.btn-success-save {
+    border: 1px solid #000000;
+    color: black;
+    background: #aba4a4
+}
+
+.btn-res-reject {
+    border: 1px solid #000000;
+    color: black;
+    background: #aba4a4
+}
+
+.btn-success-save.btn-outline {
+    color: white;
+    background: #77c27f;
+    width: 85px;
+ }
+
+.btn-res-reject.btn-outline {
+    color: black;
+    background: #aeaeae;
+    width: 85px;
+}
+
+.btn-success-save.btn-outline:hover {
+    color: white;
+    border: 1px solid #000000;
+    background: green;
+}
+
+.btn-res-reject.btn-outline:hover {
+    color: black;
+    border: 1px solid #000000;
+    background: grey;
+ }
+
+
+#refresh-btn {
+    -webkit-animation: rotation 2s infinite linear;
+}
+
+@-webkit-keyframes rotation {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+
+    to {
+        -webkit-transform: rotate(359deg);
+    }
 }
