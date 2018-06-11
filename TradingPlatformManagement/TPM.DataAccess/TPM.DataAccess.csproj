@@ -12,4 +12,8 @@
     <ProjectReference Include="..\TPM.DataModel\TPM.DataModel.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Providers\" />
+  </ItemGroup>
+
 </Project>
