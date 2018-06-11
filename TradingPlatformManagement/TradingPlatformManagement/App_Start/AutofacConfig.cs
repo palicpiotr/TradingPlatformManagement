@@ -37,6 +37,10 @@ namespace TradingPlatformManagement.App_Start
 
             builder.RegisterType<HomeController>().InstancePerDependency();
             builder.RegisterType<BiddingController>().InstancePerDependency();
+            builder.RegisterType<AccountController>().InstancePerDependency();
+            builder.RegisterType<BiddingTypeController>().InstancePerDependency();
+            builder.RegisterType<CompanyController>().InstancePerDependency();
+            builder.RegisterType<CountryController>().InstancePerDependency();
 
             return builder.Build();
         }
