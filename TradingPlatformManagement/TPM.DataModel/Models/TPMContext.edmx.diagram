@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="43480863ef304892b491999139bf0c77" Name="Diagram1">
+        <EntityTypeShape EntityType="TradingPlatformManagementModel.C__EFMigrationsHistory" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="TradingPlatformManagementModel.AspNetRoleClaim" Width="1.5" PointX="8" PointY="13.625" />
+        <EntityTypeShape EntityType="TradingPlatformManagementModel.AspNetRole" Width="1.5" PointX="5.75" PointY="10.875" />
+        <EntityTypeShape EntityType="TradingPlatformManagementModel.AspNetUserClaim" Width="1.5" PointX="10.25" PointY="10.875" />
+        <EntityTypeShape EntityType="TradingPlatformManagementModel.AspNetUserLogin" Width="1.5" PointX="10.25" PointY="8.25" />
+        <EntityTypeShape EntityType="TradingPlatformManagementModel.AspNetUser" Width="1.5" PointX="8" PointY="8.25" />
+        <EntityTypeShape EntityType="TradingPlatformManagementModel.AspNetUserToken" Width="1.5" PointX="5.75" PointY="0.75" />
+        <EntityTypeShape EntityType="TradingPlatformManagementModel.Bidding" Width="1.5" PointX="3" PointY="3.125" />
+        <EntityTypeShape EntityType="TradingPlatformManagementModel.BiddingType" Width="1.5" PointX="0.75" PointY="9.125" />
+        <EntityTypeShape EntityType="TradingPlatformManagementModel.Company" Width="1.5" PointX="3.75" PointY="8.125" />
+        <EntityTypeShape EntityType="TradingPlatformManagementModel.Country" Width="1.5" PointX="0.75" PointY="4.25" />
+        <EntityTypeShape EntityType="TradingPlatformManagementModel.Document" Width="1.5" PointX="0.75" PointY="11.5" />
+        <EntityTypeShape EntityType="TradingPlatformManagementModel.Lot" Width="1.5" PointX="0.75" PointY="16.5" />
+        <EntityTypeShape EntityType="TradingPlatformManagementModel.Person" Width="1.5" PointX="6" PointY="3.625" />
+        <EntityTypeShape EntityType="TradingPlatformManagementModel.PersonType" Width="1.5" PointX="3.75" PointY="0.75" />
+        <EntityTypeShape EntityType="TradingPlatformManagementModel.Protocol" Width="1.5" PointX="0.75" PointY="20.25" />
+        <EntityTypeShape EntityType="TradingPlatformManagementModel.sysdiagram" Width="1.5" PointX="7.75" PointY="0.75" />
+        <EntityTypeShape EntityType="TradingPlatformManagementModel.TenderType" Width="1.5" PointX="0.75" PointY="14" />
+        <AssociationConnector Association="TradingPlatformManagementModel.FK_AspNetRoleClaims_AspNetRoles_RoleId" />
+        <AssociationConnector Association="TradingPlatformManagementModel.FK_AspNetUserClaims_AspNetUsers_UserId" />
+        <AssociationConnector Association="TradingPlatformManagementModel.FK_AspNetUserLogins_AspNetUsers_UserId" />
+        <AssociationConnector Association="TradingPlatformManagementModel.FK_Biddings_BiddingTypes" />
+        <AssociationConnector Association="TradingPlatformManagementModel.FK_Biddings_Countries" />
+        <AssociationConnector Association="TradingPlatformManagementModel.FK_Biddings_Documents" />
+        <AssociationConnector Association="TradingPlatformManagementModel.FK_Biddings_Lots" />
+        <AssociationConnector Association="TradingPlatformManagementModel.FK_Biddings_Persons" />
+        <AssociationConnector Association="TradingPlatformManagementModel.FK_Biddings_Protocols" />
+        <AssociationConnector Association="TradingPlatformManagementModel.FK_Biddings_TenderTypes" />
+        <AssociationConnector Association="TradingPlatformManagementModel.FK_Persons_Companies" />
+        <AssociationConnector Association="TradingPlatformManagementModel.FK_Persons_Countries" />
+        <AssociationConnector Association="TradingPlatformManagementModel.FK_Persons_PersonTypes" />
+        <AssociationConnector Association="TradingPlatformManagementModel.AspNetUserRoles" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

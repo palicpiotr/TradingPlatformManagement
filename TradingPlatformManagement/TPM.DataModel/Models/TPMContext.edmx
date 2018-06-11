@@ -1,0 +1,1162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="TradingPlatformManagementModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="__EFMigrationsHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+          </Key>
+          <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetRoleClaims">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ClaimType" Type="nvarchar(max)" />
+          <Property Name="ClaimValue" Type="nvarchar(max)" />
+          <Property Name="RoleId" Type="nvarchar" MaxLength="450" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetRoles">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="450" Nullable="false" />
+          <Property Name="ConcurrencyStamp" Type="nvarchar(max)" />
+          <Property Name="Name" Type="nvarchar" MaxLength="256" />
+          <Property Name="NormalizedName" Type="nvarchar" MaxLength="256" />
+        </EntityType>
+        <EntityType Name="AspNetUserClaims">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ClaimType" Type="nvarchar(max)" />
+          <Property Name="ClaimValue" Type="nvarchar(max)" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="450" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUserLogins">
+          <Key>
+            <PropertyRef Name="LoginProvider" />
+            <PropertyRef Name="ProviderKey" />
+          </Key>
+          <Property Name="LoginProvider" Type="nvarchar" MaxLength="450" Nullable="false" />
+          <Property Name="ProviderKey" Type="nvarchar" MaxLength="450" Nullable="false" />
+          <Property Name="ProviderDisplayName" Type="nvarchar(max)" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="450" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUserRoles">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="UserId" Type="nvarchar" MaxLength="450" Nullable="false" />
+          <Property Name="RoleId" Type="nvarchar" MaxLength="450" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUsers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="450" Nullable="false" />
+          <Property Name="AccessFailedCount" Type="int" Nullable="false" />
+          <Property Name="ConcurrencyStamp" Type="nvarchar(max)" />
+          <Property Name="Email" Type="nvarchar" MaxLength="256" />
+          <Property Name="EmailConfirmed" Type="bit" Nullable="false" />
+          <Property Name="LockoutEnabled" Type="bit" Nullable="false" />
+          <Property Name="LockoutEnd" Type="datetimeoffset" Precision="7" />
+          <Property Name="NormalizedEmail" Type="nvarchar" MaxLength="256" />
+          <Property Name="NormalizedUserName" Type="nvarchar" MaxLength="256" />
+          <Property Name="PasswordHash" Type="nvarchar(max)" />
+          <Property Name="PhoneNumber" Type="nvarchar(max)" />
+          <Property Name="PhoneNumberConfirmed" Type="bit" Nullable="false" />
+          <Property Name="SecurityStamp" Type="nvarchar(max)" />
+          <Property Name="TwoFactorEnabled" Type="bit" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="256" />
+        </EntityType>
+        <EntityType Name="AspNetUserTokens">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="LoginProvider" />
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Name="UserId" Type="nvarchar" MaxLength="450" Nullable="false" />
+          <Property Name="LoginProvider" Type="nvarchar" MaxLength="450" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="450" Nullable="false" />
+          <Property Name="Value" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Biddings">
+          <Key>
+            <PropertyRef Name="BiddingId" />
+          </Key>
+          <Property Name="BiddingId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="LotId" Type="int" Nullable="false" />
+          <Property Name="PersonId" Type="int" Nullable="false" />
+          <Property Name="DocumentationId" Type="int" />
+          <Property Name="BiddingTypeId" Type="int" Nullable="false" />
+          <Property Name="TenderTypeId" Type="int" Nullable="false" />
+          <Property Name="ProtocolId" Type="int" />
+          <Property Name="CountryId" Type="int" />
+        </EntityType>
+        <EntityType Name="BiddingTypes">
+          <Key>
+            <PropertyRef Name="BiddingTypeId" />
+          </Key>
+          <Property Name="BiddingTypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Companies">
+          <Key>
+            <PropertyRef Name="CompanyId" />
+          </Key>
+          <Property Name="CompanyId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="FoundationDate" Type="datetime" />
+          <Property Name="INN" Type="int" />
+          <Property Name="KPP" Type="int" />
+          <Property Name="OGRN" Type="int" />
+          <Property Name="AkkreditationDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Countries">
+          <Key>
+            <PropertyRef Name="CountryId" />
+          </Key>
+          <Property Name="CountryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ISO" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Documents">
+          <Key>
+            <PropertyRef Name="DocumentId" />
+          </Key>
+          <Property Name="DocumentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="URL" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Lots">
+          <Key>
+            <PropertyRef Name="LotId" />
+          </Key>
+          <Property Name="LotId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Status" Type="int" Nullable="false" />
+          <Property Name="DateOfEndRegistration" Type="datetime" />
+          <Property Name="DateOfStartRegistration" Type="datetime" />
+          <Property Name="DateOfPub" Type="datetime" />
+          <Property Name="DateOfSummarizing" Type="datetime" />
+          <Property Name="DateOfBidding" Type="datetime" />
+          <Property Name="DeliveryAddress" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Persons">
+          <Key>
+            <PropertyRef Name="PersonId" />
+          </Key>
+          <Property Name="PersonId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="SurnamName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Patron" Type="nvarchar" MaxLength="100" />
+          <Property Name="PersonTypeId" Type="int" Nullable="false" />
+          <Property Name="CompanyId" Type="int" />
+          <Property Name="CountryId" Type="int" />
+        </EntityType>
+        <EntityType Name="PersonTypes">
+          <Key>
+            <PropertyRef Name="PersonTypeId" />
+          </Key>
+          <Property Name="PersonTypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Protocols">
+          <Key>
+            <PropertyRef Name="ProtocolId" />
+          </Key>
+          <Property Name="ProtocolId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="TenderTypes">
+          <Key>
+            <PropertyRef Name="TenderTypeId" />
+          </Key>
+          <Property Name="TenderTypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_AspNetRoleClaims_AspNetRoles_RoleId">
+          <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetRoleClaims" Type="Self.AspNetRoleClaims" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetRoles">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetRoleClaims">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AspNetUserClaims_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserClaims" Type="Self.AspNetUserClaims" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserClaims">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AspNetUserLogins_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserLogins" Type="Self.AspNetUserLogins" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserLogins">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AspNetUserRoles_AspNetRoles_RoleId">
+          <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetRoles">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserRoles">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AspNetUserRoles_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserRoles">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Biddings_BiddingTypes">
+          <End Role="BiddingTypes" Type="Self.BiddingTypes" Multiplicity="1" />
+          <End Role="Biddings" Type="Self.Biddings" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BiddingTypes">
+              <PropertyRef Name="BiddingTypeId" />
+            </Principal>
+            <Dependent Role="Biddings">
+              <PropertyRef Name="BiddingTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Biddings_Countries">
+          <End Role="Countries" Type="Self.Countries" Multiplicity="0..1" />
+          <End Role="Biddings" Type="Self.Biddings" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Countries">
+              <PropertyRef Name="CountryId" />
+            </Principal>
+            <Dependent Role="Biddings">
+              <PropertyRef Name="CountryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Biddings_Documents">
+          <End Role="Documents" Type="Self.Documents" Multiplicity="0..1" />
+          <End Role="Biddings" Type="Self.Biddings" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Documents">
+              <PropertyRef Name="DocumentId" />
+            </Principal>
+            <Dependent Role="Biddings">
+              <PropertyRef Name="DocumentationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Biddings_Lots">
+          <End Role="Lots" Type="Self.Lots" Multiplicity="1" />
+          <End Role="Biddings" Type="Self.Biddings" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lots">
+              <PropertyRef Name="LotId" />
+            </Principal>
+            <Dependent Role="Biddings">
+              <PropertyRef Name="LotId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Biddings_Persons">
+          <End Role="Persons" Type="Self.Persons" Multiplicity="1" />
+          <End Role="Biddings" Type="Self.Biddings" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Persons">
+              <PropertyRef Name="PersonId" />
+            </Principal>
+            <Dependent Role="Biddings">
+              <PropertyRef Name="PersonId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Biddings_Protocols">
+          <End Role="Protocols" Type="Self.Protocols" Multiplicity="0..1" />
+          <End Role="Biddings" Type="Self.Biddings" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Protocols">
+              <PropertyRef Name="ProtocolId" />
+            </Principal>
+            <Dependent Role="Biddings">
+              <PropertyRef Name="ProtocolId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Biddings_TenderTypes">
+          <End Role="TenderTypes" Type="Self.TenderTypes" Multiplicity="1" />
+          <End Role="Biddings" Type="Self.Biddings" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TenderTypes">
+              <PropertyRef Name="TenderTypeId" />
+            </Principal>
+            <Dependent Role="Biddings">
+              <PropertyRef Name="TenderTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Persons_Companies">
+          <End Role="Companies" Type="Self.Companies" Multiplicity="0..1" />
+          <End Role="Persons" Type="Self.Persons" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Companies">
+              <PropertyRef Name="CompanyId" />
+            </Principal>
+            <Dependent Role="Persons">
+              <PropertyRef Name="CompanyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Persons_Countries">
+          <End Role="Countries" Type="Self.Countries" Multiplicity="0..1" />
+          <End Role="Persons" Type="Self.Persons" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Countries">
+              <PropertyRef Name="CountryId" />
+            </Principal>
+            <Dependent Role="Persons">
+              <PropertyRef Name="CountryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Persons_PersonTypes">
+          <End Role="PersonTypes" Type="Self.PersonTypes" Multiplicity="1" />
+          <End Role="Persons" Type="Self.Persons" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PersonTypes">
+              <PropertyRef Name="PersonTypeId" />
+            </Principal>
+            <Dependent Role="Persons">
+              <PropertyRef Name="PersonTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="TradingPlatformManagementModelStoreContainer">
+          <EntitySet Name="__EFMigrationsHistory" EntityType="Self.__EFMigrationsHistory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetRoleClaims" EntityType="Self.AspNetRoleClaims" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaims" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogins" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserRoles" EntityType="Self.AspNetUserRoles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserTokens" EntityType="Self.AspNetUserTokens" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Biddings" EntityType="Self.Biddings" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BiddingTypes" EntityType="Self.BiddingTypes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Companies" EntityType="Self.Companies" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Countries" EntityType="Self.Countries" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Documents" EntityType="Self.Documents" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Lots" EntityType="Self.Lots" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Persons" EntityType="Self.Persons" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PersonTypes" EntityType="Self.PersonTypes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Protocols" EntityType="Self.Protocols" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TenderTypes" EntityType="Self.TenderTypes" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_AspNetRoleClaims_AspNetRoles_RoleId" Association="Self.FK_AspNetRoleClaims_AspNetRoles_RoleId">
+            <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+            <End Role="AspNetRoleClaims" EntitySet="AspNetRoleClaims" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AspNetUserClaims_AspNetUsers_UserId" Association="Self.FK_AspNetUserClaims_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AspNetUserLogins_AspNetUsers_UserId" Association="Self.FK_AspNetUserLogins_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AspNetUserRoles_AspNetRoles_RoleId" Association="Self.FK_AspNetUserRoles_AspNetRoles_RoleId">
+            <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+            <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AspNetUserRoles_AspNetUsers_UserId" Association="Self.FK_AspNetUserRoles_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Biddings_BiddingTypes" Association="Self.FK_Biddings_BiddingTypes">
+            <End Role="BiddingTypes" EntitySet="BiddingTypes" />
+            <End Role="Biddings" EntitySet="Biddings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Biddings_Countries" Association="Self.FK_Biddings_Countries">
+            <End Role="Countries" EntitySet="Countries" />
+            <End Role="Biddings" EntitySet="Biddings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Biddings_Documents" Association="Self.FK_Biddings_Documents">
+            <End Role="Documents" EntitySet="Documents" />
+            <End Role="Biddings" EntitySet="Biddings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Biddings_Lots" Association="Self.FK_Biddings_Lots">
+            <End Role="Lots" EntitySet="Lots" />
+            <End Role="Biddings" EntitySet="Biddings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Biddings_Persons" Association="Self.FK_Biddings_Persons">
+            <End Role="Persons" EntitySet="Persons" />
+            <End Role="Biddings" EntitySet="Biddings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Biddings_Protocols" Association="Self.FK_Biddings_Protocols">
+            <End Role="Protocols" EntitySet="Protocols" />
+            <End Role="Biddings" EntitySet="Biddings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Biddings_TenderTypes" Association="Self.FK_Biddings_TenderTypes">
+            <End Role="TenderTypes" EntitySet="TenderTypes" />
+            <End Role="Biddings" EntitySet="Biddings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Persons_Companies" Association="Self.FK_Persons_Companies">
+            <End Role="Companies" EntitySet="Companies" />
+            <End Role="Persons" EntitySet="Persons" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Persons_Countries" Association="Self.FK_Persons_Countries">
+            <End Role="Countries" EntitySet="Countries" />
+            <End Role="Persons" EntitySet="Persons" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Persons_PersonTypes" Association="Self.FK_Persons_PersonTypes">
+            <End Role="PersonTypes" EntitySet="PersonTypes" />
+            <End Role="Persons" EntitySet="Persons" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TradingPlatformManagementModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="TradingPlatformManagementEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="C__EFMigrationsHistory" EntityType="TradingPlatformManagementModel.C__EFMigrationsHistory" />
+          <EntitySet Name="AspNetRoleClaims" EntityType="TradingPlatformManagementModel.AspNetRoleClaim" />
+          <EntitySet Name="AspNetRoles" EntityType="TradingPlatformManagementModel.AspNetRole" />
+          <EntitySet Name="AspNetUserClaims" EntityType="TradingPlatformManagementModel.AspNetUserClaim" />
+          <EntitySet Name="AspNetUserLogins" EntityType="TradingPlatformManagementModel.AspNetUserLogin" />
+          <EntitySet Name="AspNetUsers" EntityType="TradingPlatformManagementModel.AspNetUser" />
+          <EntitySet Name="AspNetUserTokens" EntityType="TradingPlatformManagementModel.AspNetUserToken" />
+          <EntitySet Name="Biddings" EntityType="TradingPlatformManagementModel.Bidding" />
+          <EntitySet Name="BiddingTypes" EntityType="TradingPlatformManagementModel.BiddingType" />
+          <EntitySet Name="Companies" EntityType="TradingPlatformManagementModel.Company" />
+          <EntitySet Name="Countries" EntityType="TradingPlatformManagementModel.Country" />
+          <EntitySet Name="Documents" EntityType="TradingPlatformManagementModel.Document" />
+          <EntitySet Name="Lots" EntityType="TradingPlatformManagementModel.Lot" />
+          <EntitySet Name="Persons" EntityType="TradingPlatformManagementModel.Person" />
+          <EntitySet Name="PersonTypes" EntityType="TradingPlatformManagementModel.PersonType" />
+          <EntitySet Name="Protocols" EntityType="TradingPlatformManagementModel.Protocol" />
+          <EntitySet Name="sysdiagrams" EntityType="TradingPlatformManagementModel.sysdiagram" />
+          <EntitySet Name="TenderTypes" EntityType="TradingPlatformManagementModel.TenderType" />
+          <AssociationSet Name="FK_AspNetRoleClaims_AspNetRoles_RoleId" Association="TradingPlatformManagementModel.FK_AspNetRoleClaims_AspNetRoles_RoleId">
+            <End Role="AspNetRole" EntitySet="AspNetRoles" />
+            <End Role="AspNetRoleClaim" EntitySet="AspNetRoleClaims" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AspNetUserClaims_AspNetUsers_UserId" Association="TradingPlatformManagementModel.FK_AspNetUserClaims_AspNetUsers_UserId">
+            <End Role="AspNetUser" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserClaim" EntitySet="AspNetUserClaims" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AspNetUserLogins_AspNetUsers_UserId" Association="TradingPlatformManagementModel.FK_AspNetUserLogins_AspNetUsers_UserId">
+            <End Role="AspNetUser" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserLogin" EntitySet="AspNetUserLogins" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Biddings_BiddingTypes" Association="TradingPlatformManagementModel.FK_Biddings_BiddingTypes">
+            <End Role="BiddingType" EntitySet="BiddingTypes" />
+            <End Role="Bidding" EntitySet="Biddings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Biddings_Countries" Association="TradingPlatformManagementModel.FK_Biddings_Countries">
+            <End Role="Country" EntitySet="Countries" />
+            <End Role="Bidding" EntitySet="Biddings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Biddings_Documents" Association="TradingPlatformManagementModel.FK_Biddings_Documents">
+            <End Role="Document" EntitySet="Documents" />
+            <End Role="Bidding" EntitySet="Biddings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Biddings_Lots" Association="TradingPlatformManagementModel.FK_Biddings_Lots">
+            <End Role="Lot" EntitySet="Lots" />
+            <End Role="Bidding" EntitySet="Biddings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Biddings_Persons" Association="TradingPlatformManagementModel.FK_Biddings_Persons">
+            <End Role="Person" EntitySet="Persons" />
+            <End Role="Bidding" EntitySet="Biddings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Biddings_Protocols" Association="TradingPlatformManagementModel.FK_Biddings_Protocols">
+            <End Role="Protocol" EntitySet="Protocols" />
+            <End Role="Bidding" EntitySet="Biddings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Biddings_TenderTypes" Association="TradingPlatformManagementModel.FK_Biddings_TenderTypes">
+            <End Role="TenderType" EntitySet="TenderTypes" />
+            <End Role="Bidding" EntitySet="Biddings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Persons_Companies" Association="TradingPlatformManagementModel.FK_Persons_Companies">
+            <End Role="Company" EntitySet="Companies" />
+            <End Role="Person" EntitySet="Persons" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Persons_Countries" Association="TradingPlatformManagementModel.FK_Persons_Countries">
+            <End Role="Country" EntitySet="Countries" />
+            <End Role="Person" EntitySet="Persons" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Persons_PersonTypes" Association="TradingPlatformManagementModel.FK_Persons_PersonTypes">
+            <End Role="PersonType" EntitySet="PersonTypes" />
+            <End Role="Person" EntitySet="Persons" />
+          </AssociationSet>
+          <AssociationSet Name="AspNetUserRoles" Association="TradingPlatformManagementModel.AspNetUserRoles">
+            <End Role="AspNetRole" EntitySet="AspNetRoles" />
+            <End Role="AspNetUser" EntitySet="AspNetUsers" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="C__EFMigrationsHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+          </Key>
+          <Property Name="MigrationId" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="ProductVersion" Type="String" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="AspNetRoleClaim">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ClaimType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ClaimValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RoleId" Type="String" Nullable="false" MaxLength="450" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AspNetRole" Relationship="TradingPlatformManagementModel.FK_AspNetRoleClaims_AspNetRoles_RoleId" FromRole="AspNetRoleClaim" ToRole="AspNetRole" />
+        </EntityType>
+        <EntityType Name="AspNetRole">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" Nullable="false" MaxLength="450" FixedLength="false" Unicode="true" />
+          <Property Name="ConcurrencyStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="NormalizedName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AspNetRoleClaims" Relationship="TradingPlatformManagementModel.FK_AspNetRoleClaims_AspNetRoles_RoleId" FromRole="AspNetRole" ToRole="AspNetRoleClaim" />
+          <NavigationProperty Name="AspNetUsers" Relationship="TradingPlatformManagementModel.AspNetUserRoles" FromRole="AspNetRole" ToRole="AspNetUser" />
+        </EntityType>
+        <EntityType Name="AspNetUserClaim">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ClaimType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ClaimValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="UserId" Type="String" Nullable="false" MaxLength="450" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AspNetUser" Relationship="TradingPlatformManagementModel.FK_AspNetUserClaims_AspNetUsers_UserId" FromRole="AspNetUserClaim" ToRole="AspNetUser" />
+        </EntityType>
+        <EntityType Name="AspNetUserLogin">
+          <Key>
+            <PropertyRef Name="LoginProvider" />
+            <PropertyRef Name="ProviderKey" />
+          </Key>
+          <Property Name="LoginProvider" Type="String" Nullable="false" MaxLength="450" FixedLength="false" Unicode="true" />
+          <Property Name="ProviderKey" Type="String" Nullable="false" MaxLength="450" FixedLength="false" Unicode="true" />
+          <Property Name="ProviderDisplayName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="UserId" Type="String" Nullable="false" MaxLength="450" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AspNetUser" Relationship="TradingPlatformManagementModel.FK_AspNetUserLogins_AspNetUsers_UserId" FromRole="AspNetUserLogin" ToRole="AspNetUser" />
+        </EntityType>
+        <EntityType Name="AspNetUser">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" Nullable="false" MaxLength="450" FixedLength="false" Unicode="true" />
+          <Property Name="AccessFailedCount" Type="Int32" Nullable="false" />
+          <Property Name="ConcurrencyStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="EmailConfirmed" Type="Boolean" Nullable="false" />
+          <Property Name="LockoutEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="LockoutEnd" Type="DateTimeOffset" Precision="7" />
+          <Property Name="NormalizedEmail" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="NormalizedUserName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumberConfirmed" Type="Boolean" Nullable="false" />
+          <Property Name="SecurityStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TwoFactorEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="UserName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AspNetUserClaims" Relationship="TradingPlatformManagementModel.FK_AspNetUserClaims_AspNetUsers_UserId" FromRole="AspNetUser" ToRole="AspNetUserClaim" />
+          <NavigationProperty Name="AspNetUserLogins" Relationship="TradingPlatformManagementModel.FK_AspNetUserLogins_AspNetUsers_UserId" FromRole="AspNetUser" ToRole="AspNetUserLogin" />
+          <NavigationProperty Name="AspNetRoles" Relationship="TradingPlatformManagementModel.AspNetUserRoles" FromRole="AspNetUser" ToRole="AspNetRole" />
+        </EntityType>
+        <EntityType Name="AspNetUserToken">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="LoginProvider" />
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Name="UserId" Type="String" Nullable="false" MaxLength="450" FixedLength="false" Unicode="true" />
+          <Property Name="LoginProvider" Type="String" Nullable="false" MaxLength="450" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="450" FixedLength="false" Unicode="true" />
+          <Property Name="Value" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Bidding">
+          <Key>
+            <PropertyRef Name="BiddingId" />
+          </Key>
+          <Property Name="BiddingId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="LotId" Type="Int32" Nullable="false" />
+          <Property Name="PersonId" Type="Int32" Nullable="false" />
+          <Property Name="DocumentationId" Type="Int32" />
+          <Property Name="BiddingTypeId" Type="Int32" Nullable="false" />
+          <Property Name="TenderTypeId" Type="Int32" Nullable="false" />
+          <Property Name="ProtocolId" Type="Int32" />
+          <Property Name="CountryId" Type="Int32" />
+          <NavigationProperty Name="BiddingType" Relationship="TradingPlatformManagementModel.FK_Biddings_BiddingTypes" FromRole="Bidding" ToRole="BiddingType" />
+          <NavigationProperty Name="Country" Relationship="TradingPlatformManagementModel.FK_Biddings_Countries" FromRole="Bidding" ToRole="Country" />
+          <NavigationProperty Name="Document" Relationship="TradingPlatformManagementModel.FK_Biddings_Documents" FromRole="Bidding" ToRole="Document" />
+          <NavigationProperty Name="Lot" Relationship="TradingPlatformManagementModel.FK_Biddings_Lots" FromRole="Bidding" ToRole="Lot" />
+          <NavigationProperty Name="Person" Relationship="TradingPlatformManagementModel.FK_Biddings_Persons" FromRole="Bidding" ToRole="Person" />
+          <NavigationProperty Name="Protocol" Relationship="TradingPlatformManagementModel.FK_Biddings_Protocols" FromRole="Bidding" ToRole="Protocol" />
+          <NavigationProperty Name="TenderType" Relationship="TradingPlatformManagementModel.FK_Biddings_TenderTypes" FromRole="Bidding" ToRole="TenderType" />
+        </EntityType>
+        <EntityType Name="BiddingType">
+          <Key>
+            <PropertyRef Name="BiddingTypeId" />
+          </Key>
+          <Property Name="BiddingTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Biddings" Relationship="TradingPlatformManagementModel.FK_Biddings_BiddingTypes" FromRole="BiddingType" ToRole="Bidding" />
+        </EntityType>
+        <EntityType Name="Company">
+          <Key>
+            <PropertyRef Name="CompanyId" />
+          </Key>
+          <Property Name="CompanyId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="FoundationDate" Type="DateTime" Precision="3" />
+          <Property Name="INN" Type="Int32" />
+          <Property Name="KPP" Type="Int32" />
+          <Property Name="OGRN" Type="Int32" />
+          <Property Name="AkkreditationDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Persons" Relationship="TradingPlatformManagementModel.FK_Persons_Companies" FromRole="Company" ToRole="Person" />
+        </EntityType>
+        <EntityType Name="Country">
+          <Key>
+            <PropertyRef Name="CountryId" />
+          </Key>
+          <Property Name="CountryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ISO" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Biddings" Relationship="TradingPlatformManagementModel.FK_Biddings_Countries" FromRole="Country" ToRole="Bidding" />
+          <NavigationProperty Name="Persons" Relationship="TradingPlatformManagementModel.FK_Persons_Countries" FromRole="Country" ToRole="Person" />
+        </EntityType>
+        <EntityType Name="Document">
+          <Key>
+            <PropertyRef Name="DocumentId" />
+          </Key>
+          <Property Name="DocumentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="URL" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Biddings" Relationship="TradingPlatformManagementModel.FK_Biddings_Documents" FromRole="Document" ToRole="Bidding" />
+        </EntityType>
+        <EntityType Name="Lot">
+          <Key>
+            <PropertyRef Name="LotId" />
+          </Key>
+          <Property Name="LotId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="Int32" Nullable="false" />
+          <Property Name="DateOfEndRegistration" Type="DateTime" Precision="3" />
+          <Property Name="DateOfStartRegistration" Type="DateTime" Precision="3" />
+          <Property Name="DateOfPub" Type="DateTime" Precision="3" />
+          <Property Name="DateOfSummarizing" Type="DateTime" Precision="3" />
+          <Property Name="DateOfBidding" Type="DateTime" Precision="3" />
+          <Property Name="DeliveryAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Biddings" Relationship="TradingPlatformManagementModel.FK_Biddings_Lots" FromRole="Lot" ToRole="Bidding" />
+        </EntityType>
+        <EntityType Name="Person">
+          <Key>
+            <PropertyRef Name="PersonId" />
+          </Key>
+          <Property Name="PersonId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="SurnamName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Patron" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PersonTypeId" Type="Int32" Nullable="false" />
+          <Property Name="CompanyId" Type="Int32" />
+          <Property Name="CountryId" Type="Int32" />
+          <NavigationProperty Name="Biddings" Relationship="TradingPlatformManagementModel.FK_Biddings_Persons" FromRole="Person" ToRole="Bidding" />
+          <NavigationProperty Name="Company" Relationship="TradingPlatformManagementModel.FK_Persons_Companies" FromRole="Person" ToRole="Company" />
+          <NavigationProperty Name="Country" Relationship="TradingPlatformManagementModel.FK_Persons_Countries" FromRole="Person" ToRole="Country" />
+          <NavigationProperty Name="PersonType" Relationship="TradingPlatformManagementModel.FK_Persons_PersonTypes" FromRole="Person" ToRole="PersonType" />
+        </EntityType>
+        <EntityType Name="PersonType">
+          <Key>
+            <PropertyRef Name="PersonTypeId" />
+          </Key>
+          <Property Name="PersonTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Persons" Relationship="TradingPlatformManagementModel.FK_Persons_PersonTypes" FromRole="PersonType" ToRole="Person" />
+        </EntityType>
+        <EntityType Name="Protocol">
+          <Key>
+            <PropertyRef Name="ProtocolId" />
+          </Key>
+          <Property Name="ProtocolId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Biddings" Relationship="TradingPlatformManagementModel.FK_Biddings_Protocols" FromRole="Protocol" ToRole="Bidding" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TenderType">
+          <Key>
+            <PropertyRef Name="TenderTypeId" />
+          </Key>
+          <Property Name="TenderTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Biddings" Relationship="TradingPlatformManagementModel.FK_Biddings_TenderTypes" FromRole="TenderType" ToRole="Bidding" />
+        </EntityType>
+        <Association Name="FK_AspNetRoleClaims_AspNetRoles_RoleId">
+          <End Type="TradingPlatformManagementModel.AspNetRole" Role="AspNetRole" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="TradingPlatformManagementModel.AspNetRoleClaim" Role="AspNetRoleClaim" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetRole">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetRoleClaim">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AspNetUserClaims_AspNetUsers_UserId">
+          <End Type="TradingPlatformManagementModel.AspNetUser" Role="AspNetUser" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="TradingPlatformManagementModel.AspNetUserClaim" Role="AspNetUserClaim" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUser">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserClaim">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AspNetUserLogins_AspNetUsers_UserId">
+          <End Type="TradingPlatformManagementModel.AspNetUser" Role="AspNetUser" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="TradingPlatformManagementModel.AspNetUserLogin" Role="AspNetUserLogin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUser">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserLogin">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Biddings_BiddingTypes">
+          <End Type="TradingPlatformManagementModel.BiddingType" Role="BiddingType" Multiplicity="1" />
+          <End Type="TradingPlatformManagementModel.Bidding" Role="Bidding" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BiddingType">
+              <PropertyRef Name="BiddingTypeId" />
+            </Principal>
+            <Dependent Role="Bidding">
+              <PropertyRef Name="BiddingTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Biddings_Countries">
+          <End Type="TradingPlatformManagementModel.Country" Role="Country" Multiplicity="0..1" />
+          <End Type="TradingPlatformManagementModel.Bidding" Role="Bidding" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Country">
+              <PropertyRef Name="CountryId" />
+            </Principal>
+            <Dependent Role="Bidding">
+              <PropertyRef Name="CountryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Biddings_Documents">
+          <End Type="TradingPlatformManagementModel.Document" Role="Document" Multiplicity="0..1" />
+          <End Type="TradingPlatformManagementModel.Bidding" Role="Bidding" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Document">
+              <PropertyRef Name="DocumentId" />
+            </Principal>
+            <Dependent Role="Bidding">
+              <PropertyRef Name="DocumentationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Biddings_Lots">
+          <End Type="TradingPlatformManagementModel.Lot" Role="Lot" Multiplicity="1" />
+          <End Type="TradingPlatformManagementModel.Bidding" Role="Bidding" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lot">
+              <PropertyRef Name="LotId" />
+            </Principal>
+            <Dependent Role="Bidding">
+              <PropertyRef Name="LotId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Biddings_Persons">
+          <End Type="TradingPlatformManagementModel.Person" Role="Person" Multiplicity="1" />
+          <End Type="TradingPlatformManagementModel.Bidding" Role="Bidding" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="PersonId" />
+            </Principal>
+            <Dependent Role="Bidding">
+              <PropertyRef Name="PersonId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Biddings_Protocols">
+          <End Type="TradingPlatformManagementModel.Protocol" Role="Protocol" Multiplicity="0..1" />
+          <End Type="TradingPlatformManagementModel.Bidding" Role="Bidding" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Protocol">
+              <PropertyRef Name="ProtocolId" />
+            </Principal>
+            <Dependent Role="Bidding">
+              <PropertyRef Name="ProtocolId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Biddings_TenderTypes">
+          <End Type="TradingPlatformManagementModel.TenderType" Role="TenderType" Multiplicity="1" />
+          <End Type="TradingPlatformManagementModel.Bidding" Role="Bidding" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TenderType">
+              <PropertyRef Name="TenderTypeId" />
+            </Principal>
+            <Dependent Role="Bidding">
+              <PropertyRef Name="TenderTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Persons_Companies">
+          <End Type="TradingPlatformManagementModel.Company" Role="Company" Multiplicity="0..1" />
+          <End Type="TradingPlatformManagementModel.Person" Role="Person" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Company">
+              <PropertyRef Name="CompanyId" />
+            </Principal>
+            <Dependent Role="Person">
+              <PropertyRef Name="CompanyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Persons_Countries">
+          <End Type="TradingPlatformManagementModel.Country" Role="Country" Multiplicity="0..1" />
+          <End Type="TradingPlatformManagementModel.Person" Role="Person" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Country">
+              <PropertyRef Name="CountryId" />
+            </Principal>
+            <Dependent Role="Person">
+              <PropertyRef Name="CountryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Persons_PersonTypes">
+          <End Type="TradingPlatformManagementModel.PersonType" Role="PersonType" Multiplicity="1" />
+          <End Type="TradingPlatformManagementModel.Person" Role="Person" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PersonType">
+              <PropertyRef Name="PersonTypeId" />
+            </Principal>
+            <Dependent Role="Person">
+              <PropertyRef Name="PersonTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AspNetUserRoles">
+          <End Type="TradingPlatformManagementModel.AspNetRole" Role="AspNetRole" Multiplicity="*" />
+          <End Type="TradingPlatformManagementModel.AspNetUser" Role="AspNetUser" Multiplicity="*" />
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TradingPlatformManagementModelStoreContainer" CdmEntityContainer="TradingPlatformManagementEntities">
+          <EntitySetMapping Name="C__EFMigrationsHistory">
+            <EntityTypeMapping TypeName="TradingPlatformManagementModel.C__EFMigrationsHistory">
+              <MappingFragment StoreEntitySet="__EFMigrationsHistory">
+                <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+                <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetRoleClaims">
+            <EntityTypeMapping TypeName="TradingPlatformManagementModel.AspNetRoleClaim">
+              <MappingFragment StoreEntitySet="AspNetRoleClaims">
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
+                <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetRoles">
+            <EntityTypeMapping TypeName="TradingPlatformManagementModel.AspNetRole">
+              <MappingFragment StoreEntitySet="AspNetRoles">
+                <ScalarProperty Name="NormalizedName" ColumnName="NormalizedName" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ConcurrencyStamp" ColumnName="ConcurrencyStamp" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUserClaims">
+            <EntityTypeMapping TypeName="TradingPlatformManagementModel.AspNetUserClaim">
+              <MappingFragment StoreEntitySet="AspNetUserClaims">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
+                <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUserLogins">
+            <EntityTypeMapping TypeName="TradingPlatformManagementModel.AspNetUserLogin">
+              <MappingFragment StoreEntitySet="AspNetUserLogins">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ProviderDisplayName" ColumnName="ProviderDisplayName" />
+                <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
+                <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUsers">
+            <EntityTypeMapping TypeName="TradingPlatformManagementModel.AspNetUser">
+              <MappingFragment StoreEntitySet="AspNetUsers">
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+                <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+                <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+                <ScalarProperty Name="NormalizedUserName" ColumnName="NormalizedUserName" />
+                <ScalarProperty Name="NormalizedEmail" ColumnName="NormalizedEmail" />
+                <ScalarProperty Name="LockoutEnd" ColumnName="LockoutEnd" />
+                <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+                <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="ConcurrencyStamp" ColumnName="ConcurrencyStamp" />
+                <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUserTokens">
+            <EntityTypeMapping TypeName="TradingPlatformManagementModel.AspNetUserToken">
+              <MappingFragment StoreEntitySet="AspNetUserTokens">
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Biddings">
+            <EntityTypeMapping TypeName="TradingPlatformManagementModel.Bidding">
+              <MappingFragment StoreEntitySet="Biddings">
+                <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+                <ScalarProperty Name="ProtocolId" ColumnName="ProtocolId" />
+                <ScalarProperty Name="TenderTypeId" ColumnName="TenderTypeId" />
+                <ScalarProperty Name="BiddingTypeId" ColumnName="BiddingTypeId" />
+                <ScalarProperty Name="DocumentationId" ColumnName="DocumentationId" />
+                <ScalarProperty Name="PersonId" ColumnName="PersonId" />
+                <ScalarProperty Name="LotId" ColumnName="LotId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="BiddingId" ColumnName="BiddingId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BiddingTypes">
+            <EntityTypeMapping TypeName="TradingPlatformManagementModel.BiddingType">
+              <MappingFragment StoreEntitySet="BiddingTypes">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="BiddingTypeId" ColumnName="BiddingTypeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Companies">
+            <EntityTypeMapping TypeName="TradingPlatformManagementModel.Company">
+              <MappingFragment StoreEntitySet="Companies">
+                <ScalarProperty Name="AkkreditationDate" ColumnName="AkkreditationDate" />
+                <ScalarProperty Name="OGRN" ColumnName="OGRN" />
+                <ScalarProperty Name="KPP" ColumnName="KPP" />
+                <ScalarProperty Name="INN" ColumnName="INN" />
+                <ScalarProperty Name="FoundationDate" ColumnName="FoundationDate" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Countries">
+            <EntityTypeMapping TypeName="TradingPlatformManagementModel.Country">
+              <MappingFragment StoreEntitySet="Countries">
+                <ScalarProperty Name="ISO" ColumnName="ISO" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Documents">
+            <EntityTypeMapping TypeName="TradingPlatformManagementModel.Document">
+              <MappingFragment StoreEntitySet="Documents">
+                <ScalarProperty Name="URL" ColumnName="URL" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="DocumentId" ColumnName="DocumentId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Lots">
+            <EntityTypeMapping TypeName="TradingPlatformManagementModel.Lot">
+              <MappingFragment StoreEntitySet="Lots">
+                <ScalarProperty Name="DeliveryAddress" ColumnName="DeliveryAddress" />
+                <ScalarProperty Name="DateOfBidding" ColumnName="DateOfBidding" />
+                <ScalarProperty Name="DateOfSummarizing" ColumnName="DateOfSummarizing" />
+                <ScalarProperty Name="DateOfPub" ColumnName="DateOfPub" />
+                <ScalarProperty Name="DateOfStartRegistration" ColumnName="DateOfStartRegistration" />
+                <ScalarProperty Name="DateOfEndRegistration" ColumnName="DateOfEndRegistration" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="LotId" ColumnName="LotId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Persons">
+            <EntityTypeMapping TypeName="TradingPlatformManagementModel.Person">
+              <MappingFragment StoreEntitySet="Persons">
+                <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+                <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+                <ScalarProperty Name="PersonTypeId" ColumnName="PersonTypeId" />
+                <ScalarProperty Name="Patron" ColumnName="Patron" />
+                <ScalarProperty Name="SurnamName" ColumnName="SurnamName" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="PersonId" ColumnName="PersonId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PersonTypes">
+            <EntityTypeMapping TypeName="TradingPlatformManagementModel.PersonType">
+              <MappingFragment StoreEntitySet="PersonTypes">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="PersonTypeId" ColumnName="PersonTypeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Protocols">
+            <EntityTypeMapping TypeName="TradingPlatformManagementModel.Protocol">
+              <MappingFragment StoreEntitySet="Protocols">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ProtocolId" ColumnName="ProtocolId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="TradingPlatformManagementModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TenderTypes">
+            <EntityTypeMapping TypeName="TradingPlatformManagementModel.TenderType">
+              <MappingFragment StoreEntitySet="TenderTypes">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="TenderTypeId" ColumnName="TenderTypeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="AspNetUserRoles" TypeName="TradingPlatformManagementModel.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
+            <EndProperty Name="AspNetUser">
+              <ScalarProperty Name="Id" ColumnName="UserId" />
+            </EndProperty>
+            <EndProperty Name="AspNetRole">
+              <ScalarProperty Name="Id" ColumnName="RoleId" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
