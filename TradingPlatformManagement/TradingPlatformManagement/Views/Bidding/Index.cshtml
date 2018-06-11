@@ -5,8 +5,7 @@
 
 <script type="text/javascript">
 
-    function onCompanyFilterChange(e) {
-        debugger;
+    function onCompanyFilterChange(e) {      
         var grid = $("#biddingsGrid").data().kendoGrid;
         var b = $("#companies").val();
         if (b > 0) {
@@ -17,8 +16,7 @@
         }
     }
 
-    function onBiddingTypeChange(e) {
-        debugger;
+    function onBiddingTypeChange(e) {        
         var grid = $("#biddingsGrid").data().kendoGrid;
         var b = $("#biddingTypes").val();
         if (b > 0) {
@@ -29,8 +27,7 @@
         }
     }
 
-    function onCountryChange(e) {
-        debugger;
+    function onCountryChange(e) {      
         var grid = $("#biddingsGrid").data().kendoGrid;
         var b = $("#countries").val();
         if (b > 0) {
@@ -143,7 +140,7 @@
                                                     .DataSource(dataSource => dataSource
                                                         .Ajax()
                                                         .Model(model => model.Id(p => p.BiddingId))
-                                                        .Read(read => read.Action("GetBiddings", "Bidding", new { typeId = 1 }))
+                                                        .Read(read => read.Action("GetBiddings", "Bidding", new { typeId = -1 }))
 
                                                     )
                                                     .Selectable(selectTable => selectTable

@@ -5590,11 +5590,17 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AgriculturalController.cs" />
     <Compile Include="Controllers\BiddingController.cs" />
     <Compile Include="Controllers\BiddingTypeController.cs" />
+    <Compile Include="Controllers\CapitalRepairController.cs" />
+    <Compile Include="Controllers\ComercialController.cs" />
     <Compile Include="Controllers\CompanyController.cs" />
+    <Compile Include="Controllers\CorporateStoreController.cs" />
     <Compile Include="Controllers\CountryController.cs" />
+    <Compile Include="Controllers\GovernmentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ImmutableController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -6473,9 +6479,15 @@
     <Folder Include="Dependency\" />
     <Folder Include="Models\" />
     <Folder Include="Views\Account\" />
+    <Folder Include="Views\Agricultural\" />
     <Folder Include="Views\BiddingType\" />
+    <Folder Include="Views\CapitalRepair\" />
+    <Folder Include="Views\Comercial\" />
     <Folder Include="Views\Company\" />
+    <Folder Include="Views\CorporateStore\" />
     <Folder Include="Views\Country\" />
+    <Folder Include="Views\Government\" />
+    <Folder Include="Views\Immutable\" />
     <Folder Include="Views\TenderType\" />
   </ItemGroup>
   <ItemGroup>

@@ -59,9 +59,21 @@ namespace TPM.DataAccessFramework.Providers.Biddings
                                           OGRN = bidding.Person.Company.OGRN
                                       }
                                   }).ToListAsync();
-            //if (typeId > 0)
-            //    biddings = biddings.Where(x => x.BiddingType.BiddingTypeId > typeId).ToList();
+            if (typeId > 0)
+                biddings = biddings.Where(x => x.BiddingType.BiddingTypeId > typeId).ToList();
             return biddings;
         }
+
+        public async Task<IEnumerable<BiddingViewModel>> GetCapBiddings() => await GetBiddings(4);
+
+        public async Task<IEnumerable<BiddingViewModel>> GetComBiddings() => await GetBiddings(2);
+
+        public async Task<IEnumerable<BiddingViewModel>> GetCorBiddings() => await GetBiddings(5);
+
+        public async Task<IEnumerable<BiddingViewModel>> GetGovBiddings() => await GetBiddings(1);
+
+        public async Task<IEnumerable<BiddingViewModel>> GetImmutBiddings() => await GetBiddings(6);
+
+        public async Task<IEnumerable<BiddingViewModel>> GetAgrBiddings() => await GetBiddings(3);
     }
 }
