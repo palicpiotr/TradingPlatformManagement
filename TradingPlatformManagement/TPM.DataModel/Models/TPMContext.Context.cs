@@ -32,12 +32,10 @@ namespace TPM.DataModel.Models
         public virtual DbSet<AspNetUserLogin> AspNetUserLogins { get; set; }
         public virtual DbSet<AspNetUser> AspNetUsers { get; set; }
         public virtual DbSet<AspNetUserToken> AspNetUserTokens { get; set; }
-        public virtual DbSet<Bidding> Biddings { get; set; }
         public virtual DbSet<BiddingType> BiddingTypes { get; set; }
         public virtual DbSet<Company> Companies { get; set; }
         public virtual DbSet<Document> Documents { get; set; }
         public virtual DbSet<Lot> Lots { get; set; }
-        public virtual DbSet<Person> Persons { get; set; }
         public virtual DbSet<PersonType> PersonTypes { get; set; }
         public virtual DbSet<Protocol> Protocols { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }

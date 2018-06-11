@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "Biddings";
+}
+
+<h2>Biddings</h2>
+
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="dashboard_graph">
+            <div>
+                @(Html.Kendo().Grid<TPM.DataAccessFramework.Models.BiddingViewModel>()
+                                    .Name("biddingsGrid")
+                                    .Columns(columns =>
+                                    {
+                                        columns.Bound(c => c.BiddingId).Visible(false);
+                                        columns.Bound(c => c.Name);
+                                        columns.Bound(c => c.BiddingType.BiddingTypeId).Visible(false);
+                                        columns.Bound(c => c.BiddingType.Name);                                                                           
+                                    })
+                                    .DataSource(dataSource => dataSource
+                                        .Ajax()
+                                        .Model(model => model.Id(p => p.BiddingId))
+                                        .Read(read => read.Action("GetBiddings", "Bidding", new { typeId = 1 }))
+                                
+                                    )                                  
+                                    .Selectable(selectTable => selectTable
+                                        .Mode(GridSelectionMode.Single)
+                                        .Type(GridSelectionType.Row)
+                                    )
+                                    .Editable(editTable => editTable.Mode(GridEditMode.InLine))
+                                    .Pageable()
+                                    .Sortable()
+                )
+            </div>
+        </div>
+    </div>
+</div>
+
+

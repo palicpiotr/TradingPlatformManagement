@@ -14,12 +14,6 @@ namespace TPM.DataModel.Models
     
     public partial class Person
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Person()
-        {
-            this.Biddings = new HashSet<Bidding>();
-        }
-    
         public int PersonId { get; set; }
         public string Name { get; set; }
         public string SurnamName { get; set; }
@@ -27,8 +21,6 @@ namespace TPM.DataModel.Models
         public int PersonTypeId { get; set; }
         public Nullable<int> CompanyId { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Bidding> Biddings { get; set; }
         public virtual Company Company { get; set; }
         public virtual PersonType PersonType { get; set; }
     }

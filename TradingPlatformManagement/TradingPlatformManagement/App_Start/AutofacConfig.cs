@@ -9,6 +9,8 @@ using System.Net.Http;
 using System.Web.Mvc;
 using Autofac.Integration.Mvc;
 using TradingPlatformManagement.Controllers;
+using TPM.DataAccessFramework.Providers;
+using TPM.DataModel.Models;
 
 namespace TradingPlatformManagement.App_Start
 {
@@ -21,7 +23,12 @@ namespace TradingPlatformManagement.App_Start
         {
             var builder = new ContainerBuilder();
 
+            builder.Register(r => new TradingPlatformManagementEntities()).As<TradingPlatformManagementEntities>();
+
+            builder.Register(r => new BiddingProvider(r.Resolve<TradingPlatformManagementEntities>())).As<IBiddingProvider>().InstancePerDependency();
+
             builder.RegisterType<HomeController>().InstancePerDependency();
+            builder.RegisterType<BiddingController>().InstancePerDependency();
 
             return builder.Build();
         }
