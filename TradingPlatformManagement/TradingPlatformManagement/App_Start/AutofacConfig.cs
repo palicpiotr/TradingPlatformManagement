@@ -41,6 +41,12 @@ namespace TradingPlatformManagement.App_Start
             builder.RegisterType<BiddingTypeController>().InstancePerDependency();
             builder.RegisterType<CompanyController>().InstancePerDependency();
             builder.RegisterType<CountryController>().InstancePerDependency();
+            builder.RegisterType<AgriculturalController>().InstancePerDependency();
+            builder.RegisterType<CapitalRepairController>().InstancePerDependency();
+            builder.RegisterType<ComercialController>().InstancePerDependency();
+            builder.RegisterType<CorporateStoreController>().InstancePerDependency();
+            builder.RegisterType<GovernmentController>().InstancePerDependency();
+            builder.RegisterType<ImmutableController>().InstancePerDependency();
 
             return builder.Build();
         }
