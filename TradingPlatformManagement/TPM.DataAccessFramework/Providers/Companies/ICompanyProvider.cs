@@ -5,11 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using TPM.DataAccessFramework.Models;
 
-namespace TPM.DataAccessFramework.Providers
+namespace TPM.DataAccessFramework.Providers.Companies
 {
-    public interface IBiddingProvider
+    public interface ICompanyProvider
     {
-        Task<IEnumerable<BiddingViewModel>> GetBiddings(int typeId);
-
+        Task<IEnumerable<CompanyViewModel>> GetCompanies();
     }
 }

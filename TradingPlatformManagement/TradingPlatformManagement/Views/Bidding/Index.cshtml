@@ -16,14 +16,24 @@
                                         columns.Bound(c => c.BiddingId).Visible(false);
                                         columns.Bound(c => c.Name);
                                         columns.Bound(c => c.BiddingType.BiddingTypeId).Visible(false);
-                                        columns.Bound(c => c.BiddingType.Name);                                                                           
+                                        columns.Bound(c => c.BiddingType.Name);
+                                        columns.Bound(c => c.Person.PersonId).Visible(false);
+                                        columns.Bound(c => c.Person.Name);
+                                        columns.Bound(c => c.Person.LastName);
+                                        columns.Bound(c => c.Person.Patron);
+                                        columns.Bound(c => c.Country.CountryId).Visible(false);
+                                        columns.Bound(c => c.Country.Name);
+                                        //.ClientTemplate("<div style='text-align:center;' class='flag flag-#=Country.ISO# flag-2x'><div> #=Country.Name# </div></div>"); ;
+                                        columns.Bound(c => c.Country.ISO).ClientTemplate("<span style='text-align:center;' class='flag flag-#=Country.ISO# flag-2x'> </span>");
+                                        columns.Bound(c => c.TenderType.TenderTypeId).Visible(false);
+                                        columns.Bound(c => c.TenderType.Name);
                                     })
                                     .DataSource(dataSource => dataSource
                                         .Ajax()
                                         .Model(model => model.Id(p => p.BiddingId))
                                         .Read(read => read.Action("GetBiddings", "Bidding", new { typeId = 1 }))
-                                
-                                    )                                  
+
+                                    )
                                     .Selectable(selectTable => selectTable
                                         .Mode(GridSelectionMode.Single)
                                         .Type(GridSelectionType.Row)
@@ -31,6 +41,10 @@
                                     .Editable(editTable => editTable.Mode(GridEditMode.InLine))
                                     .Pageable()
                                     .Sortable()
+                                    .Filterable(ftb => ftb.Enabled(true))
+                                    .ColumnMenu()
+                                    .Resizable(r => r.Columns(true))
+                                    
                 )
             </div>
         </div>

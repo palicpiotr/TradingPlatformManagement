@@ -49,12 +49,19 @@
   <ItemGroup>
     <Compile Include="Models\BiddingTypeViewModel.cs" />
     <Compile Include="Models\BiddingViewModel.cs" />
+    <Compile Include="Models\CompanyViewModel.cs" />
     <Compile Include="Models\CountryViewModel.cs" />
     <Compile Include="Models\PersonViewModel.cs" />
     <Compile Include="Models\TenderTypeViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Providers\BiddingProvider.cs" />
-    <Compile Include="Providers\IBiddingProvider.cs" />
+    <Compile Include="Providers\Biddings\BiddingProvider.cs" />
+    <Compile Include="Providers\Biddings\IBiddingProvider.cs" />
+    <Compile Include="Providers\BiddingTypes\BiddingTypesProvider.cs" />
+    <Compile Include="Providers\BiddingTypes\IBiddingTypesProvider.cs" />
+    <Compile Include="Providers\Companies\CompanyProvider.cs" />
+    <Compile Include="Providers\Companies\ICompanyProvider.cs" />
+    <Compile Include="Providers\Countries\CountryProvider.cs" />
+    <Compile Include="Providers\Countries\ICountryProvider.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
