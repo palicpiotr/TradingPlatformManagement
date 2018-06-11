@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.27703.2018
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TradingPlatformManagement", "TradingPlatformManagement\TradingPlatformManagement.csproj", "{81DEF99B-2F13-47F0-B620-F6C660DFD637}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TPM.DataModel", "TPM.DataModel\TPM.DataModel.csproj", "{7B1E1CD6-0404-480D-AEEC-A38E014631B3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TPM.DataAccess", "TPM.DataAccess\TPM.DataAccess.csproj", "{59759422-B1FA-46EE-8023-EDA086359272}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{81DEF99B-2F13-47F0-B620-F6C660DFD637}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{81DEF99B-2F13-47F0-B620-F6C660DFD637}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{81DEF99B-2F13-47F0-B620-F6C660DFD637}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B1E1CD6-0404-480D-AEEC-A38E014631B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B1E1CD6-0404-480D-AEEC-A38E014631B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B1E1CD6-0404-480D-AEEC-A38E014631B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B1E1CD6-0404-480D-AEEC-A38E014631B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59759422-B1FA-46EE-8023-EDA086359272}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59759422-B1FA-46EE-8023-EDA086359272}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59759422-B1FA-46EE-8023-EDA086359272}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59759422-B1FA-46EE-8023-EDA086359272}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
