@@ -6476,6 +6476,8 @@
     <Content Include="Views\Immutable\Index.cshtml" />
     <Content Include="Views\Person\_Providers.cshtml" />
     <Content Include="Views\Person\_Customers.cshtml" />
+    <Content Include="Views\Person\Customers.cshtml" />
+    <Content Include="Views\Person\Providers.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -8,6 +8,7 @@ namespace TPM.DataAccessFramework.Models
         public string LastName { get; set; }
         public string Patron { get; set; }
         public int PersonTypeId { get; set; }
-        public int CompanyId { get; set; }
+        public CompanyViewModel Company { get; set; }
+        public CountryViewModel Country { get; set; }
     }
 }

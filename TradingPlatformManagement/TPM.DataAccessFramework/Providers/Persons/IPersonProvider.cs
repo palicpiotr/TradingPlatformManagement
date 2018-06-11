@@ -1,4 +1,6 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+using TPM.DataAccessFramework.Models;
 
 namespace TPM.DataAccessFramework.Providers.Persons
 {
@@ -6,6 +8,8 @@ namespace TPM.DataAccessFramework.Providers.Persons
     {
         Task<int> GetCustomersCount();
         Task<int> GetProvidersCount();
-
+        Task<IEnumerable<PersonViewModel>> GetPersons(int typeId);
+        Task<IEnumerable<PersonViewModel>> GetCustomers();
+        Task<IEnumerable<PersonViewModel>> GetProviders();
     }
 }

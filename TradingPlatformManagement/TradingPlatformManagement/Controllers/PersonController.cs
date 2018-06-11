@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Kendo.Mvc.Extensions;
+using Kendo.Mvc.UI;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -34,6 +36,22 @@ namespace TradingPlatformManagement.Controllers
         {
             var p = await _personProvider.GetProvidersCount();
             return PartialView("Providers", p);
+        }
+
+        public ActionResult Providers() => View();
+
+        public ActionResult Customers() => View();
+
+        public async Task<ActionResult> GetProviders([DataSourceRequest]DataSourceRequest request)
+        {
+            var providers = await _personProvider.GetProviders();
+            return Json(providers.ToDataSourceResult(request));
+        }
+
+        public async Task<ActionResult> GetCustomers([DataSourceRequest]DataSourceRequest request)
+        {
+            var customers = await _personProvider.GetCustomers();
+            return Json(customers.ToDataSourceResult(request));
         }
 
     }
