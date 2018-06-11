@@ -14,8 +14,17 @@ namespace TPM.DataModel.Models
     
     public partial class TenderType
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public TenderType()
+        {
+            this.Biddings = new HashSet<Bidding>();
+        }
+    
         public int TenderTypeId { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Bidding> Biddings { get; set; }
     }
 }

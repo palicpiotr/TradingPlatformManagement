@@ -14,8 +14,17 @@ namespace TPM.DataModel.Models
     
     public partial class Document
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Document()
+        {
+            this.Biddings = new HashSet<Bidding>();
+        }
+    
         public int DocumentId { get; set; }
         public string Name { get; set; }
         public string URL { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Bidding> Biddings { get; set; }
     }
 }

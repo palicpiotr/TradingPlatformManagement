@@ -76,6 +76,9 @@
     <Compile Include="Models\Company.cs">
       <DependentUpon>TPMContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Country.cs">
+      <DependentUpon>TPMContext.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\C__EFMigrationsHistory.cs">
       <DependentUpon>TPMContext.tt</DependentUpon>
     </Compile>

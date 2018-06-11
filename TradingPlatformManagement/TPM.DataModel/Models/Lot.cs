@@ -14,6 +14,12 @@ namespace TPM.DataModel.Models
     
     public partial class Lot
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Lot()
+        {
+            this.Biddings = new HashSet<Bidding>();
+        }
+    
         public int LotId { get; set; }
         public string Name { get; set; }
         public int Status { get; set; }
@@ -23,5 +29,8 @@ namespace TPM.DataModel.Models
         public Nullable<System.DateTime> DateOfSummarizing { get; set; }
         public Nullable<System.DateTime> DateOfBidding { get; set; }
         public string DeliveryAddress { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Bidding> Biddings { get; set; }
     }
 }

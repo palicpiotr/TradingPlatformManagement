@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="Models\BiddingTypeViewModel.cs" />
     <Compile Include="Models\BiddingViewModel.cs" />
+    <Compile Include="Models\CountryViewModel.cs" />
     <Compile Include="Models\PersonViewModel.cs" />
     <Compile Include="Models\TenderTypeViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

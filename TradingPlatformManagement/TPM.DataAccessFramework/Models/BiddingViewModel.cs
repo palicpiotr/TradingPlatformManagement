@@ -11,6 +11,7 @@ namespace TPM.DataAccessFramework.Models
         public BiddingTypeViewModel BiddingType { get; set; }
         public TenderTypeViewModel TenderType { get; set; }
         public int ProtocolId { get; set; }
+        public CountryViewModel Country { get; set; }
 
     }
 }

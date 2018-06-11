@@ -12,22 +12,21 @@ namespace TPM.DataModel.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Company
+    public partial class Country
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Company()
+        public Country()
         {
+            this.Biddings = new HashSet<Bidding>();
             this.Persons = new HashSet<Person>();
         }
     
-        public int CompanyId { get; set; }
+        public int CountryId { get; set; }
         public string Name { get; set; }
-        public Nullable<System.DateTime> FoundationDate { get; set; }
-        public Nullable<int> INN { get; set; }
-        public Nullable<int> KPP { get; set; }
-        public Nullable<int> OGRN { get; set; }
-        public Nullable<System.DateTime> AkkreditationDate { get; set; }
+        public string ISO { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Bidding> Biddings { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Person> Persons { get; set; }
     }
