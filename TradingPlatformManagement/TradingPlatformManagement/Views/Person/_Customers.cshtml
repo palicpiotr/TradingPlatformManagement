@@ -1,0 +1,32 @@
+﻿
+@Html.Action("GetCustomersCount", "Person")
+
+<script type="text/javascript">
+    function updateInvalidationFABQueue() {
+        var urlPath = '@Url.Action("GetCustomersCount", "Person")';
+        $.ajax({
+            type: "POST",
+            url: urlPath,
+            contentType: "application/json; charset=utf-8",
+            dataType: "html",
+            success: function (data) {
+                $("#total-customers").html(data);
+            },
+            error: function () {
+            }
+        });
+    }
+    $(document).ready(function () {
+        setInterval(function () {
+            $("#total-customers").animate({
+                opacity: '0.1'
+            }
+            );
+            updateInvalidationFABQueue();
+            $("#total-customers").animate({
+                opacity: '1'
+            });
+        }, 10000); //10 seconds
+    });
+</script>
+

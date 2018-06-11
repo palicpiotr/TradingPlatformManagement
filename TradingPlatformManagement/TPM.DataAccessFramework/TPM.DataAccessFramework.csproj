@@ -62,6 +62,8 @@
     <Compile Include="Providers\Companies\ICompanyProvider.cs" />
     <Compile Include="Providers\Countries\CountryProvider.cs" />
     <Compile Include="Providers\Countries\ICountryProvider.cs" />
+    <Compile Include="Providers\Persons\IPersonProvider.cs" />
+    <Compile Include="Providers\Persons\PersonProvider.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -15,6 +15,7 @@ using TPM.DataAccessFramework.Providers.Biddings;
 using TPM.DataAccessFramework.Providers.BiddingTypes;
 using TPM.DataAccessFramework.Providers.Companies;
 using TPM.DataAccessFramework.Providers.Countries;
+using TPM.DataAccessFramework.Providers.Persons;
 
 namespace TradingPlatformManagement.App_Start
 {
@@ -33,7 +34,7 @@ namespace TradingPlatformManagement.App_Start
             builder.Register(r => new BiddingTypesProvider(r.Resolve<TradingPlatformManagementEntities>())).As<IBiddingTypesProvider>();
             builder.Register(r => new CompanyProvider(r.Resolve<TradingPlatformManagementEntities>())).As<ICompanyProvider>();
             builder.Register(r => new CountryProvider(r.Resolve<TradingPlatformManagementEntities>())).As<ICountryProvider>();
-
+            builder.Register(r => new PersonProvider(r.Resolve<TradingPlatformManagementEntities>())).As<IPersonProvider>();
 
             builder.RegisterType<HomeController>().InstancePerDependency();
             builder.RegisterType<BiddingController>().InstancePerDependency();
@@ -47,6 +48,7 @@ namespace TradingPlatformManagement.App_Start
             builder.RegisterType<CorporateStoreController>().InstancePerDependency();
             builder.RegisterType<GovernmentController>().InstancePerDependency();
             builder.RegisterType<ImmutableController>().InstancePerDependency();
+            builder.RegisterType<PersonController>().InstancePerDependency();
 
             return builder.Build();
         }
