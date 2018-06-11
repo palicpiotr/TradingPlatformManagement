@@ -51,6 +51,8 @@
     <Compile Include="Models\BiddingViewModel.cs" />
     <Compile Include="Models\CompanyViewModel.cs" />
     <Compile Include="Models\CountryViewModel.cs" />
+    <Compile Include="Models\DocumentViewModel.cs" />
+    <Compile Include="Models\LotViewModel.cs" />
     <Compile Include="Models\PersonViewModel.cs" />
     <Compile Include="Models\TenderTypeViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

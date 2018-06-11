@@ -5,7 +5,7 @@
 
 <script type="text/javascript">
 
-    function onCompanyFilterChange(e) {      
+    function onCompanyFilterChange(e) {
         var grid = $("#biddingsGrid").data().kendoGrid;
         var b = $("#companies").val();
         if (b > 0) {
@@ -16,7 +16,7 @@
         }
     }
 
-    function onBiddingTypeChange(e) {        
+    function onBiddingTypeChange(e) {
         var grid = $("#biddingsGrid").data().kendoGrid;
         var b = $("#biddingTypes").val();
         if (b > 0) {
@@ -27,7 +27,7 @@
         }
     }
 
-    function onCountryChange(e) {      
+    function onCountryChange(e) {
         var grid = $("#biddingsGrid").data().kendoGrid;
         var b = $("#countries").val();
         if (b > 0) {
@@ -40,6 +40,25 @@
 
 </script>
 
+
+<script id="detail-tmpl" type="text/x-kendo-template">
+    <div style="color:white;">Person first name: #: Person.Name#</div>
+    <div style="color:white;">Person last name: #: Person.LastName#</div>
+    <div style="color:white;">Person patron: #: Person.Patron#</div>
+    <div style="color:white;">Company: #: Company.Name#</div>
+    <div><b>Lot:</b></div>
+    <div style="color:white;">Name: #: Lot.Name#</div>
+    <div style="color:white;">Статус: #: Lot.StatusText#</div>
+    <div style="color:white;">Место: #: Lot.DeliveryAddress#</div>
+    <div style="color:white;">Дата окончания регистрации:: #: Lot.DateOfEndRegistration#</div>
+    <div style="color:white;">Дата и время рассмотрения заявок:: #: Lot.DateOfBidding#</div>
+    <div style="color:white;">Дата и время подведения итогов:: #: Lot.DateOfPub#</div>
+    <div style="color:white;">Дата публикации:: #: Lot.DateOfStartRegistration#</div>
+    <div style="color:white;">Дата проведения торгов:: #: Lot.DateOfSummarizing#</div>
+</script>
+  @*//columns.Bound(c => c.Person.Name);
+                                                                //columns.Bound(c => c.Person.LastName);
+                                                                //columns.Bound(c => c.Person.Patron);*@
 <h2>Biddings</h2>
 
 <div class="row">
@@ -49,19 +68,19 @@
             Companies:
         </span>
         @(Html.Kendo().DropDownList()
-                                          .Name("companies")
-                                          .OptionLabel(new  { CompanyId = -1, Name = "All"})
-                                          .DataTextField("Name")
-                                          .DataValueField("CompanyId")
-                                          .Filter(FilterType.Contains)
-                                          .DataSource(source =>
-                                          {
-                                              source.Read(read =>
-                                              {
-                                                  read.Action("GetCompanies", "Company");
-                                              });
-                                          })
-                                          .Events(e => e.Change("onCompanyFilterChange"))
+                                                          .Name("companies")
+                                                          .OptionLabel(new { CompanyId = -1, Name = "All" })
+                                                          .DataTextField("Name")
+                                                          .DataValueField("CompanyId")
+                                                          .Filter(FilterType.Contains)
+                                                          .DataSource(source =>
+                                                          {
+                                                              source.Read(read =>
+                                                              {
+                                                                  read.Action("GetCompanies", "Company");
+                                                              });
+                                                          })
+                                                          .Events(e => e.Change("onCompanyFilterChange"))
         )
 
     </span>
@@ -71,44 +90,44 @@
     </span>
     <span>
         @(Html.Kendo().DropDownList()
-                                       .Name("biddingTypes")
-                                       .DataTextField("Name")
-                                       .DataValueField("BiddingTypeId")
-                                       .OptionLabel(new { BiddingTypeId = -1, Name = "All" })
-                                       .Filter(FilterType.Contains)
-                                       .DataSource(source =>
-                                       {
-                                           source.Read(read =>
-                                           {
-                                               read.Action("GetBiddingTypes", "BiddingType");
-                                           });
-                                       })
-                                        .Events(e => e.Change("onBiddingTypeChange"))
+                                                       .Name("biddingTypes")
+                                                       .DataTextField("Name")
+                                                       .DataValueField("BiddingTypeId")
+                                                       .OptionLabel(new { BiddingTypeId = -1, Name = "All" })
+                                                       .Filter(FilterType.Contains)
+                                                       .DataSource(source =>
+                                                       {
+                                                           source.Read(read =>
+                                                           {
+                                                               read.Action("GetBiddingTypes", "BiddingType");
+                                                           });
+                                                       })
+                                                        .Events(e => e.Change("onBiddingTypeChange"))
         )
     </span>
     <span class="">
         <span class="">
-           Countries:
-          
+            Countries:
+
         </span>
 
         @(Html.Kendo().DropDownList()
-                               .Name("countries")
-                               .DataTextField("Name")
-                               .DataValueField("CountryId")
-                               .OptionLabel(new { CountryId = -1, Name = "All" })
-                               .Filter(FilterType.Contains)
-                               .DataSource(source =>
-                                {
-                                    source.Read(read =>
-                                     {
-                                         read.Action("GetCountries", "Country");
-                                     });
-                                })
-                                .Events(e => e.Change("onCountryChange"))
+                                               .Name("countries")
+                                               .DataTextField("Name")
+                                               .DataValueField("CountryId")
+                                               .OptionLabel(new { CountryId = -1, Name = "All" })
+                                               .Filter(FilterType.Contains)
+                                               .DataSource(source =>
+                                                {
+                                                    source.Read(read =>
+                                                     {
+                                                         read.Action("GetCountries", "Country");
+                                                     });
+                                                })
+                                                .Events(e => e.Change("onCountryChange"))
 
         )
-   </span>
+    </span>
 
 </div>
 
@@ -117,42 +136,43 @@
         <div class="dashboard_graph">
             <div>
                 @(Html.Kendo().Grid<TPM.DataAccessFramework.Models.BiddingViewModel>()
-                                                    .Name("biddingsGrid")
-                                                    .Columns(columns =>
-                                                    {
-                                                        columns.Bound(c => c.BiddingId).Visible(false);
-                                                        columns.Bound(c => c.Name);
-                                                        columns.Bound(c => c.BiddingType.BiddingTypeId).Visible(false);
-                                                        columns.Bound(c => c.BiddingType.Name);
-                                                        columns.Bound(c => c.Person.PersonId).Visible(false);
-                                                        columns.Bound(c => c.Person.Name);
-                                                        columns.Bound(c => c.Person.LastName);
-                                                        columns.Bound(c => c.Person.Patron);
-                                                        columns.Bound(c => c.Country.CountryId).Visible(false);
-                                                        columns.Bound(c => c.Country.Name).Title("Country");
-                                                        //.ClientTemplate("<div style='text-align:center;' class='flag flag-#=Country.ISO# flag-2x'><div> #=Country.Name# </div></div>"); ;
-                                                        columns.Bound(c => c.Country.ISO).ClientTemplate("<span style='text-align:center;' class='flag flag-#=Country.ISO# flag-2x'> </span>");
-                                                        columns.Bound(c => c.TenderType.TenderTypeId).Visible(false);
-                                                        columns.Bound(c => c.TenderType.Name);
-                                                        columns.Bound(c => c.Company.CompanyId).Visible(false);
-                                                        columns.Bound(c => c.Company.Name).Title("Company");
-                                                    })
-                                                    .DataSource(dataSource => dataSource
-                                                        .Ajax()
-                                                        .Model(model => model.Id(p => p.BiddingId))
-                                                        .Read(read => read.Action("GetBiddings", "Bidding", new { typeId = -1 }))
+                                                                    .Name("biddingsGrid")
+                                                                    .Columns(columns =>
+                                                                    {
+                                                                        columns.Bound(c => c.BiddingId).Visible(false);
+                                                                        columns.Bound(c => c.Name);
+                                                                        columns.Bound(c => c.BiddingType.BiddingTypeId).Visible(false);
+                                                                        columns.Bound(c => c.BiddingType.Name);
+                                                                        columns.Bound(c => c.Person.PersonId).Visible(false);
+                                                                        //columns.Bound(c => c.Person.Name);
+                                                                        //columns.Bound(c => c.Person.LastName);
+                                                                        //columns.Bound(c => c.Person.Patron);
+                                                                        columns.Bound(c => c.Country.CountryId).Visible(false);
+                                                                        columns.Bound(c => c.Country.Name).Title("Country");
+                                                                        //.ClientTemplate("<div style='text-align:center;' class='flag flag-#=Country.ISO# flag-2x'><div> #=Country.Name# </div></div>"); ;
+                                                                        columns.Bound(c => c.Country.ISO).ClientTemplate("<span style='text-align:center;' class='flag flag-#=Country.ISO# flag-2x'> </span>");
+                                                                        columns.Bound(c => c.TenderType.TenderTypeId).Visible(false);
+                                                                        columns.Bound(c => c.TenderType.Name);
+                                                                        columns.Bound(c => c.Company.CompanyId).Visible(false);
+                                                                        //columns.Bound(c => c.Company.Name).Title("Company");
+                                                                    })
+                                                                    .DataSource(dataSource => dataSource
+                                                                        .Ajax()
+                                                                        .Model(model => model.Id(p => p.BiddingId))
+                                                                        .Read(read => read.Action("GetBiddings", "Bidding", new { typeId = -1 }))
 
-                                                    )
-                                                    .Selectable(selectTable => selectTable
-                                                        .Mode(GridSelectionMode.Single)
-                                                        .Type(GridSelectionType.Row)
-                                                    )
-                                                    .Editable(editTable => editTable.Mode(GridEditMode.InLine))
-                                                    .Pageable()
-                                                    .Sortable()
-                                                    .Filterable(ftb => ftb.Enabled(true))
-                                                    .ColumnMenu()
-                                                    .Resizable(r => r.Columns(true))
+                                                                    )
+                                                                    .Selectable(selectTable => selectTable
+                                                                        .Mode(GridSelectionMode.Single)
+                                                                        .Type(GridSelectionType.Row)
+                                                                    )
+                                                                    .Editable(editTable => editTable.Mode(GridEditMode.InLine))
+                                                                    .Pageable()
+                                                                    .Sortable()
+                                                                    .Filterable(ftb => ftb.Enabled(true))
+                                                                    .ColumnMenu()
+                                                                    .Resizable(r => r.Columns(true))
+                                                                     .ClientDetailTemplateId("detail-tmpl")
 
                 )
             </div>

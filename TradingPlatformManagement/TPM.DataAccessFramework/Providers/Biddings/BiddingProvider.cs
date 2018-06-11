@@ -57,6 +57,18 @@ namespace TPM.DataAccessFramework.Providers.Biddings
                                           INN = bidding.Person.Company.INN,
                                           KPP = bidding.Person.Company.KPP,
                                           OGRN = bidding.Person.Company.OGRN
+                                      },
+                                      Lot = new LotViewModel
+                                      {
+                                          LotId = bidding.Lot.LotId,
+                                          DateOfBidding = bidding.Lot.DateOfBidding,
+                                          DateOfEndRegistration = bidding.Lot.DateOfEndRegistration,
+                                          DateOfPub = bidding.Lot.DateOfPub,
+                                          DateOfStartRegistration = bidding.Lot.DateOfStartRegistration,
+                                          DateOfSummarizing = bidding.Lot.DateOfSummarizing,
+                                          DeliveryAddress = bidding.Lot.DeliveryAddress,
+                                          Name = bidding.Lot.Name,
+                                          Status = bidding.Lot.Status
                                       }
                                   }).ToListAsync();
             if (typeId > 0)
