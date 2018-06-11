@@ -1,0 +1,163 @@
+﻿
+@{
+    ViewBag.Title = "Government biddings";
+}
+
+<script type="text/javascript">
+
+    function onCompanyFilterChange(e) {
+        var grid = $("#biddingsGrid").data().kendoGrid;
+        var b = $("#companies").val();
+        if (b > 0) {
+            grid.dataSource.filter({ field: "Company.CompanyId", operator: "eq", value: b });
+        }
+        else {
+            grid.dataSource.filter(null);
+        }
+    }
+
+    function onBiddingTypeChange(e) {
+        var grid = $("#biddingsGrid").data().kendoGrid;
+        var b = $("#biddingTypes").val();
+        if (b > 0) {
+            grid.dataSource.filter({ field: "BiddingType.BiddingTypeId", operator: "eq", value: b });
+        }
+        else {
+            grid.dataSource.filter(null);
+        }
+    }
+
+    function onCountryChange(e) {
+        var grid = $("#biddingsGrid").data().kendoGrid;
+        var b = $("#countries").val();
+        if (b > 0) {
+            grid.dataSource.filter({ field: "Country.CountryId", operator: "eq", value: b });
+        }
+        else {
+            grid.dataSource.filter(null);
+        }
+    }
+
+</script>
+
+<h2>Government biddings</h2>
+
+<div class="row">
+
+    <span class="">
+        <span class="">
+            Companies:
+        </span>
+        @(Html.Kendo().DropDownList()
+                                                                  .Name("companies")
+                                                                  .OptionLabel(new { CompanyId = -1, Name = "All" })
+                                                                  .DataTextField("Name")
+                                                                  .DataValueField("CompanyId")
+                                                                  .Filter(FilterType.Contains)
+                                                                  .DataSource(source =>
+                                                                  {
+                                                                      source.Read(read =>
+                                                                      {
+                                                                          read.Action("GetCompanies", "Company");
+                                                                      });
+                                                                  })
+                                                                  .Events(e => e.Change("onCompanyFilterChange"))
+        )
+
+    </span>
+
+    <span class="">
+        Bidding types:
+    </span>
+    <span>
+        @(Html.Kendo().DropDownList()
+                                                               .Name("biddingTypes")
+                                                               .DataTextField("Name")
+                                                               .DataValueField("BiddingTypeId")
+                                                               .OptionLabel(new { BiddingTypeId = -1, Name = "All" })
+                                                               .Filter(FilterType.Contains)
+                                                               .DataSource(source =>
+                                                               {
+                                                                   source.Read(read =>
+                                                                   {
+                                                                       read.Action("GetBiddingTypes", "BiddingType");
+                                                                   });
+                                                               })
+                                                                .Events(e => e.Change("onBiddingTypeChange"))
+        )
+    </span>
+    <span class="">
+        <span class="">
+            Countries:
+
+        </span>
+
+        @(Html.Kendo().DropDownList()
+                                                       .Name("countries")
+                                                       .DataTextField("Name")
+                                                       .DataValueField("CountryId")
+                                                       .OptionLabel(new { CountryId = -1, Name = "All" })
+                                                       .Filter(FilterType.Contains)
+                                                       .DataSource(source =>
+                                                        {
+                                                            source.Read(read =>
+                                                             {
+                                                                 read.Action("GetCountries", "Country");
+                                                             });
+                                                        })
+                                                        .Events(e => e.Change("onCountryChange"))
+
+        )
+    </span>
+
+</div>
+
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="dashboard_graph">
+            <div>
+                @(Html.Kendo().Grid<TPM.DataAccessFramework.Models.BiddingViewModel>()
+                                                                            .Name("biddingsGrid")
+                                                                            .Columns(columns =>
+                                                                            {
+                                                                                columns.Bound(c => c.BiddingId).Visible(false);
+                                                                                columns.Bound(c => c.Name);
+                                                                                columns.Bound(c => c.BiddingType.BiddingTypeId).Visible(false);
+                                                                                columns.Bound(c => c.BiddingType.Name);
+                                                                                columns.Bound(c => c.Person.PersonId).Visible(false);
+                                                                                columns.Bound(c => c.Person.Name);
+                                                                                columns.Bound(c => c.Person.LastName);
+                                                                                columns.Bound(c => c.Person.Patron);
+                                                                                columns.Bound(c => c.Country.CountryId).Visible(false);
+                                                                                columns.Bound(c => c.Country.Name).Title("Country");
+                                                                                //.ClientTemplate("<div style='text-align:center;' class='flag flag-#=Country.ISO# flag-2x'><div> #=Country.Name# </div></div>"); ;
+                                                                                columns.Bound(c => c.Country.ISO).ClientTemplate("<span style='text-align:center;' class='flag flag-#=Country.ISO# flag-2x'> </span>");
+                                                                                columns.Bound(c => c.TenderType.TenderTypeId).Visible(false);
+                                                                                columns.Bound(c => c.TenderType.Name);
+                                                                                columns.Bound(c => c.Company.CompanyId).Visible(false);
+                                                                                columns.Bound(c => c.Company.Name).Title("Company");
+                                                                            })
+                                                                            .DataSource(dataSource => dataSource
+                                                                                .Ajax()
+                                                                                .Model(model => model.Id(p => p.BiddingId))
+                                                                                .Read(read => read.Action("GetBiddings", "Government"))
+
+                                                                            )
+                                                                            .Selectable(selectTable => selectTable
+                                                                                .Mode(GridSelectionMode.Single)
+                                                                                .Type(GridSelectionType.Row)
+                                                                            )
+                                                                            .Editable(editTable => editTable.Mode(GridEditMode.InLine))
+                                                                            .Pageable()
+                                                                            .Sortable()
+                                                                            .Filterable(ftb => ftb.Enabled(true))
+                                                                            .ColumnMenu()
+                                                                            .Resizable(r => r.Columns(true))
+
+                )
+            </div>
+        </div>
+    </div>
+</div>
+
+
