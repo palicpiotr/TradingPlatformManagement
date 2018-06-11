@@ -47,10 +47,20 @@ namespace TPM.DataAccessFramework.Providers.Biddings
                                           CountryId = bidding.Country.CountryId,
                                           Name = bidding.Country.Name,
                                           ISO = bidding.Country.ISO.ToLower()
+                                      },
+                                      Company = new CompanyViewModel
+                                      {
+                                          CompanyId = bidding.Person.Company.CompanyId,
+                                          Name = bidding.Person.Company.Name,
+                                          AkkreditationDate = bidding.Person.Company.AkkreditationDate,
+                                          FoundationDate = bidding.Person.Company.FoundationDate,
+                                          INN = bidding.Person.Company.INN,
+                                          KPP = bidding.Person.Company.KPP,
+                                          OGRN = bidding.Person.Company.OGRN
                                       }
                                   }).ToListAsync();
-            if (typeId > 0)
-                biddings = biddings.Where(x => x.BiddingType.BiddingTypeId == typeId).ToList();
+            //if (typeId > 0)
+            //    biddings = biddings.Where(x => x.BiddingType.BiddingTypeId > typeId).ToList();
             return biddings;
         }
     }
