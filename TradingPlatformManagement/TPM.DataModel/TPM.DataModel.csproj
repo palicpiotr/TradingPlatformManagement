@@ -79,6 +79,9 @@
     <Compile Include="Models\Country.cs">
       <DependentUpon>TPMContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\CustomerBidding.cs">
+      <DependentUpon>TPMContext.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\C__EFMigrationsHistory.cs">
       <DependentUpon>TPMContext.tt</DependentUpon>
     </Compile>
@@ -95,6 +98,9 @@
       <DependentUpon>TPMContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Protocol.cs">
+      <DependentUpon>TPMContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProviderBidding.cs">
       <DependentUpon>TPMContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\sysdiagram.cs">

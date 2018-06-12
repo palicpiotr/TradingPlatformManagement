@@ -14,6 +14,13 @@ namespace TPM.DataModel.Models
     
     public partial class Bidding
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Bidding()
+        {
+            this.CustomerBiddings = new HashSet<CustomerBidding>();
+            this.ProviderBiddings = new HashSet<ProviderBidding>();
+        }
+    
         public int BiddingId { get; set; }
         public string Name { get; set; }
         public int LotId { get; set; }
@@ -28,8 +35,12 @@ namespace TPM.DataModel.Models
         public virtual Country Country { get; set; }
         public virtual Document Document { get; set; }
         public virtual Lot Lot { get; set; }
-        public virtual Person Person { get; set; }
         public virtual Protocol Protocol { get; set; }
         public virtual TenderType TenderType { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CustomerBidding> CustomerBiddings { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ProviderBidding> ProviderBiddings { get; set; }
+        public virtual Person Person { get; set; }
     }
 }

@@ -1,0 +1,146 @@
+﻿
+@{
+    ViewBag.Title = "Стать поставщиком";
+}
+
+<h2>Стать поставщиком</h2>
+
+
+<script type="text/javascript">
+
+    function onSectionFilterChange(e) {
+        var grid = $("#biddingsGrid").data().kendoGrid;
+        var b = $("#biddingTypes").val();
+        if (b > 0) {
+            grid.dataSource.filter({ field: "BiddingType.BiddingTypeId", operator: "eq", value: b });
+        }
+        else {
+            grid.dataSource.filter(null);
+        }
+    }
+
+    function takeBid(e) {
+        debugger;
+        e.preventDefault();
+        var bidId = this.dataItem($(e.currentTarget).closest("tr")).BiddingId;
+        var sendData = {
+            "biddingId": bidId
+        }
+        var urlPath = "@Url.Action("Confirm", "Provider")";        
+        var window = $("#confirmWindow").data("kendoWindow");
+        window.refresh({
+            url: urlPath,
+            type: "POST",
+            data: sendData
+        });
+        window.open().center();
+    }
+
+    function closeWindow(e) {
+        var window = $("#confirmWindow").data("kendoWindow");
+        window.close();
+    }
+
+</script>
+
+
+<script id="detail-tmpl" type="text/x-kendo-template">
+    <div style="color:white;">Person first name: #: Person.Name#</div>
+    <div style="color:white;">Person last name: #: Person.LastName#</div>
+    <div style="color:white;">Person patron: #: Person.Patron#</div>
+    <div style="color:white;">Company: #: Company.Name#</div>
+    <div><b>Lot:</b></div>
+    <div style="color:white;">Name: #: Lot.Name#</div>
+    <div style="color:white;">Статус: #: Lot.StatusText#</div>
+    <div style="color:white;">Место: #: Lot.DeliveryAddress#</div>
+    <div style="color:white;">Дата окончания регистрации:: #: Lot.DateOfEndRegistration#</div>
+    <div style="color:white;">Дата и время рассмотрения заявок:: #: Lot.DateOfBidding#</div>
+    <div style="color:white;">Дата и время подведения итогов:: #: Lot.DateOfPub#</div>
+    <div style="color:white;">Дата публикации:: #: Lot.DateOfStartRegistration#</div>
+    <div style="color:white;">Дата проведения торгов:: #: Lot.DateOfSummarizing#</div>
+</script>
+
+<h2>Выберите секцию</h2>
+
+<div class="row">
+
+    <span class="">
+        <span class="">
+            Biding types:
+        </span>
+        @(Html.Kendo().DropDownList()
+                                      .Name("biddingTypes")
+                                      .OptionLabel(new { CompanyId = -1, Name = "All" })
+                                      .DataTextField("Name")
+                                      .DataValueField("BiddingTypeId")
+                                      .Filter(FilterType.Contains)
+                                      .DataSource(source =>
+                                      {
+                                          source.Read(read =>
+                                          {
+                                              read.Action("GetBiddingTypes", "BiddingType");
+                                          });
+                                      })
+                                      .Events(e => e.Change("onSectionFilterChange"))
+        )
+
+    </span>
+</div>
+
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="dashboard_graph">
+            <div>
+                @(Html.Kendo().Grid<TPM.DataAccessFramework.Models.BiddingViewModel>()
+                                   .Name("biddingsGrid")
+                                   .Columns(columns =>
+                                   {
+                                       columns.Bound(c => c.BiddingId).Visible(false);
+                                       columns.Bound(c => c.Name);
+                                       columns.Bound(c => c.BiddingType.BiddingTypeId).Visible(false);
+                                       columns.Bound(c => c.BiddingType.Name);
+                                       columns.Bound(c => c.Person.PersonId).Visible(false);
+                                       columns.Bound(c => c.Country.CountryId).Visible(false);
+                                       columns.Bound(c => c.Country.Name).Title("Country");
+                                       columns.Bound(c => c.Country.ISO).ClientTemplate("<span style='text-align:center;' class='flag flag-#=Country.ISO# flag-2x'> </span>");
+                                       columns.Bound(c => c.TenderType.TenderTypeId).Visible(false);
+                                       columns.Bound(c => c.TenderType.Name);
+                                       columns.Bound(c => c.Company.CompanyId).Visible(false);
+                                       columns.Command(command =>
+                                       {
+                                           command.Custom("takeBid")
+                                           .HtmlAttributes(new { type = "button" })
+                                           .Click("takeBid")
+                                           .Text("Подать заявку");
+                                       });
+                                   })
+                                    .DataSource(dataSource => dataSource
+                                    .Ajax()
+                                    .Model(model => model.Id(p => p.BiddingId))
+                                    .Read(read => read.Action("GetBiddings", "Bidding", new { typeId = -1 })))
+                                    .Selectable(selectTable => selectTable
+                                    .Mode(GridSelectionMode.Single)
+                                    .Type(GridSelectionType.Row))
+                                    .Editable(editTable => editTable.Mode(GridEditMode.InLine))
+                                    .Pageable()
+                                    .Sortable()
+                                    .Filterable(ftb => ftb.Enabled(true))
+                                    .ColumnMenu()
+                                    .Resizable(r => r.Columns(true))
+                                    .ClientDetailTemplateId("detail-tmpl")
+                )
+            </div>
+        </div>
+    </div>
+</div>
+
+@(Html.Kendo().Window()
+        .Name("confirmWindow")
+        .Title("Confirmation")
+        .Content("Loading...")
+        .Visible(false)
+        .Modal(true)
+        .Width(700)
+        .Height(200)
+        .Draggable()
+)

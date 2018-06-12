@@ -49,6 +49,7 @@ namespace TradingPlatformManagement.App_Start
             builder.RegisterType<GovernmentController>().InstancePerDependency();
             builder.RegisterType<ImmutableController>().InstancePerDependency();
             builder.RegisterType<PersonController>().InstancePerDependency();
+            builder.RegisterType<ProviderController>().InstancePerDependency();
 
             return builder.Build();
         }

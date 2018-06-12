@@ -72,7 +72,7 @@ namespace TPM.DataAccessFramework.Providers.Biddings
                                       }
                                   }).ToListAsync();
             if (typeId > 0)
-                biddings = biddings.Where(x => x.BiddingType.BiddingTypeId > typeId).ToList();
+                return biddings.Where(x => x.BiddingType.BiddingTypeId > typeId).ToList();
             return biddings;
         }
 
