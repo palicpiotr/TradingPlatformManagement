@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNet.Identity
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -35,7 +37,7 @@
                         </div>
                         <div class="profile_info">
                             <span>Welcome,</span>
-                            <h2>John Doe</h2>
+                            <h2>@User.Identity.GetUserName()</h2>
                         </div>
                     </div>
                     <br />
@@ -72,7 +74,7 @@
                                     <a><i class="fa fa-table"></i> Заказчикам <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
                                         <li><a href="@Url.Action("Providers", "Person")">Реестр участников</a></li>
-                                        <li><a href="tables_dynamic.html">Стать участником</a></li>
+                                        <li><a href="@Url.Action("Index", "Customer")">Стать участником</a></li>
                                     </ul>
                                 </li>
                                 <li>
@@ -119,19 +121,12 @@
                         <ul class="nav navbar-nav navbar-right">
                             <li class="">
                                 <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                    <img src="images/img.jpg" alt="">John Doe
+                                    Profile
                                     <span class=" fa fa-angle-down"></span>
                                 </a>
-                                <ul class="dropdown-menu dropdown-usermenu pull-right">
-                                    <li><a href="javascript:;"> Profile</a></li>
-                                    <li>
-                                        <a href="javascript:;">
-                                            <span class="badge bg-red pull-right">50%</span>
-                                            <span>Settings</span>
-                                        </a>
-                                    </li>
-                                    <li><a href="javascript:;">Help</a></li>
-                                    <li><a href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                                <ul class="dropdown-menu dropdown-usermenu pull-right">                                                                    
+                                    <li><a href="javascript:;">Help</a></li>                                    
+                                    <li> @Html.Partial("_LoginPartial")</li>
                                 </ul>
                             </li>
 
@@ -145,7 +140,7 @@
                                         <a>
                                             <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
                                             <span>
-                                                <span>John Smith</span>
+                                                <span>@User.Identity.GetUserName()</span>
                                                 <span class="time">3 mins ago</span>
                                             </span>
                                             <span class="message">

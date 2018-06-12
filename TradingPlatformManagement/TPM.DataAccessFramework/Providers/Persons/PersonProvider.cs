@@ -18,7 +18,7 @@ namespace TPM.DataAccessFramework.Providers.Persons
         {
             _edmx = emdx;
         }
-        
+
         public async Task<int> GetCustomersCount() => await _edmx.Persons.Where(x => x.PersonTypeId == 1).CountAsync();
 
         public async Task<IEnumerable<PersonViewModel>> GetPersons(int typeId)
@@ -59,5 +59,46 @@ namespace TPM.DataAccessFramework.Providers.Persons
         public async Task<IEnumerable<PersonViewModel>> GetCustomers() => await GetPersons(1);
 
         public async Task<int> GetProvidersCount() => await _edmx.Persons.Where(x => x.PersonTypeId == 2).CountAsync();
+
+        public async Task CreatePerson(PersonViewModel model)
+        {
+            try
+            {
+                var countryEntity = new Country
+                {
+                    ISO = model.Country.ISO,
+                    Name = model.Country.Name
+                };
+                _edmx.Countries.Add(countryEntity);
+                await _edmx.SaveChangesAsync();
+                var companyEntity = new Company
+                {
+                    Name = model.Company.Name,
+                    AkkreditationDate = model.Company.AkkreditationDate,
+                    FoundationDate = model.Company.FoundationDate,
+                    INN = model.Company.INN,
+                    KPP = model.Company.KPP,
+                    OGRN = model.Company.OGRN
+                };
+                _edmx.Companies.Add(companyEntity);
+                await _edmx.SaveChangesAsync();
+                var personEntity = new Person
+                {
+                    CompanyId = companyEntity.CompanyId,
+                    CountryId = countryEntity.CountryId,
+                    UserId = model.Token,
+                    Name = model.Name,
+                    SurnamName = model.LastName,
+                    Patron = model.Patron,
+                    PersonTypeId = model.PersonTypeId,
+                };
+                _edmx.Persons.Add(personEntity);
+                await _edmx.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

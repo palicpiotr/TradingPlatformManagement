@@ -11,5 +11,6 @@ namespace TPM.DataAccessFramework.Providers.Persons
         Task<IEnumerable<PersonViewModel>> GetPersons(int typeId);
         Task<IEnumerable<PersonViewModel>> GetCustomers();
         Task<IEnumerable<PersonViewModel>> GetProviders();
+        Task CreatePerson(PersonViewModel model);
     }
 }

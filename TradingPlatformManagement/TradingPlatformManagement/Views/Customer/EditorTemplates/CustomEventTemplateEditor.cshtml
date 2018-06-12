@@ -1,0 +1,123 @@
+﻿@model TPM.DataAccessFramework.Models.BiddingViewModel
+
+@{
+    Layout = null;
+}
+
+<div class="panel panel-default">
+    <div class="panel-body">
+        <div class="row">
+            <div class="">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Bidding type</div>
+                    <div class="panel-body">
+                        @(Html.Kendo().DropDownListFor(model => model.BiddingType.BiddingTypeId)
+                                .Name("biddingType")
+                                .OptionLabel(new { BiddingTypeId = -1, Name = "Choose bidding type" })
+                                .ValuePrimitive(true)
+                                .DataSource(source =>
+                                {
+                                source.Read(read =>
+                                {
+                                read.Action("GetBiddingTypes", "BiddingType");
+                                });
+                                })
+                                .DataTextField("Name")
+                                .DataValueField("BiddingTypeId")
+                                .Filter("contains")
+                                .HtmlAttributes(new { @style = "width:100%;" })
+                        )
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">Bidding</div>
+                    <div class="panel-body">
+                        <div>
+                            @Html.TextBoxFor(m => m.Name, new { @class = "form-control", placeholder = "Name" })
+                        </div>
+                        <br />
+                        @(Html.Kendo().DropDownListFor(model => model.TenderType.TenderTypeId)
+                               .Name("tenderType")
+                                .OptionLabel(new { TenderTypeId = -1, Name = "Choose tender type" })                                
+                                .DataTextField("Name")
+                                .DataValueField("TenderTypeId")
+                                .Filter("contains")
+                                .HtmlAttributes(new { @style = "width:100%;" })
+                        )
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">Lot</div>
+                    <div class="panel-body">
+                        <div>
+                            @Html.TextBoxFor(m => m.Lot.Name, new { @class = "form-control", placeholder = "Name" })
+                        </div>
+                        <br />
+                        @*<div>
+            @Html.TextBoxFor(m => m.Lot.DateOfEndRegistration, new { @class = "form-control", placeholder = "Date of end registration" })
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.Lot.DateOfPub, new { @class = "form-control", placeholder = "Date of publication" })
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.Lot.DateOfStartRegistration, new { @class = "form-control", placeholder = "Date of start registration" })
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.Lot.DateOfSummarizing, new { @class = "form-control", placeholder = "Date of summarizing" })
+        </div>*@
+                        <br />
+                        <div>
+                            Date of bidding
+                        </div>
+                        <div>
+                            @(Html.Kendo().DatePickerFor(model => model.Lot.DateOfBidding)
+                                                           .Name("a")
+                                                           .Value("10/10/2011")
+                                                           .HtmlAttributes(new { style = "width: 100%", title = "datepicker" }))
+                        </div>
+                        <br />
+                        <div>
+                            @Html.TextBoxFor(m => m.Lot.DeliveryAddress, new { @class = "form-control", placeholder = "Delivery address" })
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">Document</div>
+                    <div class="panel-body">
+                        <div>
+                            @Html.TextBoxFor(m => m.Document.Name, new { @class = "form-control", placeholder = "Doc Name" })
+                        </div>
+                        <br />
+                        <div>
+                            @Html.TextBoxFor(m => m.Document.URL, new { @class = "form-control", placeholder = "URL for doc (if exists)" })
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">Protocol</div>
+                    <div class="panel-body">
+                        <div>
+                            @Html.TextBoxFor(m => m.Protocol.Name, new { @class = "form-control", placeholder = "Protocol Name" })
+                        </div>
+                        <br />
+                        <div>
+                            @Html.TextBoxFor(m => m.Protocol.Desc, new { @class = "form-control", placeholder = "Protocol desc (if exists)" })
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">Country</div>
+                    <div class="panel-body">
+                        <div>
+                            @Html.TextBoxFor(m => m.Country.Name, new { @class = "form-control", placeholder = "Country Name" })
+                        </div>
+                        <br />
+                        <div>
+                            @Html.TextBoxFor(m => m.Country.ISO, new { @class = "form-control", placeholder = "Country ISO (ISO-Alpha-3)" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

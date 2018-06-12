@@ -31,7 +31,6 @@ namespace TPM.DataModel.Models
         public Nullable<int> CountryId { get; set; }
         public string UserId { get; set; }
     
-        public virtual AspNetUser AspNetUser { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Bidding> Biddings { get; set; }
         public virtual Company Company { get; set; }
