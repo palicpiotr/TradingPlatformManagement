@@ -53,7 +53,9 @@
     <Compile Include="Models\CountryViewModel.cs" />
     <Compile Include="Models\DocumentViewModel.cs" />
     <Compile Include="Models\LotViewModel.cs" />
+    <Compile Include="Models\PersonTypeViewModel.cs" />
     <Compile Include="Models\PersonViewModel.cs" />
+    <Compile Include="Models\ProtocolViewModel.cs" />
     <Compile Include="Models\TenderTypeViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\Biddings\BiddingProvider.cs" />
@@ -66,6 +68,8 @@
     <Compile Include="Providers\Countries\ICountryProvider.cs" />
     <Compile Include="Providers\Persons\IPersonProvider.cs" />
     <Compile Include="Providers\Persons\PersonProvider.cs" />
+    <Compile Include="Providers\PersonTypes\IPersonTypesProvider.cs" />
+    <Compile Include="Providers\PersonTypes\PersonTypesProvider.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

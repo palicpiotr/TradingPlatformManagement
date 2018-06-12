@@ -13,6 +13,7 @@ namespace TPM.DataAccessFramework.Models
         public int ProtocolId { get; set; }
         public CountryViewModel Country { get; set; }
         public CompanyViewModel Company { get; set; }
-
+        public DocumentViewModel Document { get; set; }
+        public ProtocolViewModel Protocol { get; set; }
     }
 }

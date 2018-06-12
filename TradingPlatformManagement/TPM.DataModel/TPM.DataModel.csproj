@@ -49,24 +49,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\AspNetRole.cs">
-      <DependentUpon>TPMContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AspNetRoleClaim.cs">
-      <DependentUpon>TPMContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AspNetUser.cs">
-      <DependentUpon>TPMContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AspNetUserClaim.cs">
-      <DependentUpon>TPMContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AspNetUserLogin.cs">
-      <DependentUpon>TPMContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AspNetUserToken.cs">
-      <DependentUpon>TPMContext.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\Bidding.cs">
       <DependentUpon>TPMContext.tt</DependentUpon>
     </Compile>
@@ -82,7 +64,7 @@
     <Compile Include="Models\CustomerBidding.cs">
       <DependentUpon>TPMContext.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\C__EFMigrationsHistory.cs">
+    <Compile Include="Models\C__MigrationHistory.cs">
       <DependentUpon>TPMContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Document.cs">

@@ -25,25 +25,19 @@ namespace TPM.DataModel.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<C__EFMigrationsHistory> C__EFMigrationsHistory { get; set; }
-        public virtual DbSet<AspNetRoleClaim> AspNetRoleClaims { get; set; }
-        public virtual DbSet<AspNetRole> AspNetRoles { get; set; }
-        public virtual DbSet<AspNetUserClaim> AspNetUserClaims { get; set; }
-        public virtual DbSet<AspNetUserLogin> AspNetUserLogins { get; set; }
-        public virtual DbSet<AspNetUserToken> AspNetUserTokens { get; set; }
+        public virtual DbSet<C__MigrationHistory> C__MigrationHistory { get; set; }
+        public virtual DbSet<Bidding> Biddings { get; set; }
         public virtual DbSet<BiddingType> BiddingTypes { get; set; }
         public virtual DbSet<Company> Companies { get; set; }
         public virtual DbSet<Country> Countries { get; set; }
+        public virtual DbSet<CustomerBidding> CustomerBiddings { get; set; }
         public virtual DbSet<Document> Documents { get; set; }
         public virtual DbSet<Lot> Lots { get; set; }
+        public virtual DbSet<Person> Persons { get; set; }
         public virtual DbSet<PersonType> PersonTypes { get; set; }
         public virtual DbSet<Protocol> Protocols { get; set; }
+        public virtual DbSet<ProviderBidding> ProviderBiddings { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<TenderType> TenderTypes { get; set; }
-        public virtual DbSet<Bidding> Biddings { get; set; }
-        public virtual DbSet<CustomerBidding> CustomerBiddings { get; set; }
-        public virtual DbSet<ProviderBidding> ProviderBiddings { get; set; }
-        public virtual DbSet<AspNetUser> AspNetUsers { get; set; }
-        public virtual DbSet<Person> Persons { get; set; }
     }
 }

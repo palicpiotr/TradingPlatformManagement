@@ -87,5 +87,63 @@ namespace TPM.DataAccessFramework.Providers.Biddings
         public async Task<IEnumerable<BiddingViewModel>> GetImmutBiddings() => await GetBiddings(6);
 
         public async Task<IEnumerable<BiddingViewModel>> GetAgrBiddings() => await GetBiddings(3);
+
+        public async Task<int> CreateBidding(BiddingViewModel model)
+        {
+            try
+            {
+                var lotEntity = new Lot
+                {
+                    Name = model.Lot.Name,
+                    Status = 1,
+                    DateOfEndRegistration = model.Lot.DateOfEndRegistration,
+                    DateOfPub = model.Lot.DateOfPub,
+                    DateOfStartRegistration = model.Lot.DateOfStartRegistration,
+                    DateOfSummarizing = model.Lot.DateOfSummarizing,
+                    DateOfBidding = model.Lot.DateOfBidding,
+                    DeliveryAddress = model.Lot.DeliveryAddress
+                };
+                _edmx.Lots.Add(lotEntity);
+                await _edmx.SaveChangesAsync();
+                var documentEntity = new Document
+                {
+                    Name = model.Document.Name,
+                    URL = model.Document.URL
+                };
+                _edmx.Documents.Add(documentEntity);
+                await _edmx.SaveChangesAsync();
+                var protocolEntity = new Protocol
+                {
+                    Name = model.Protocol.Name,
+                    Description = model.Protocol.Desc
+                };
+                _edmx.Protocols.Add(protocolEntity);
+                await _edmx.SaveChangesAsync();
+                var countryEntity = new Country
+                {
+                    Name = model.Country.Name,
+                    ISO = model.Country.ISO
+                };
+                _edmx.Countries.Add(countryEntity);
+                await _edmx.SaveChangesAsync();
+                var biddingEntity = new Bidding
+                {
+                    BiddingTypeId = model.BiddingType.BiddingTypeId,
+                    Name = model.Name,
+                    LotId = lotEntity.LotId,
+                    PersonId = model.Person.PersonId,
+                    TenderTypeId = model.TenderType.TenderTypeId,
+                    ProtocolId = model.ProtocolId,
+                    CountryId = model.Country.CountryId
+                };
+                _edmx.Biddings.Add(biddingEntity);
+                await _edmx.SaveChangesAsync();
+                return biddingEntity.BiddingId;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

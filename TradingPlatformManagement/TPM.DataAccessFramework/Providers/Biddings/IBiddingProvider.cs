@@ -16,5 +16,6 @@ namespace TPM.DataAccessFramework.Providers.Biddings
         Task<IEnumerable<BiddingViewModel>> GetCapBiddings();
         Task<IEnumerable<BiddingViewModel>> GetCorBiddings();
         Task<IEnumerable<BiddingViewModel>> GetImmutBiddings();
+        Task<int> CreateBidding(BiddingViewModel model);
     }
 }

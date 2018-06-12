@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/Gentelella/css")
+    @Scripts.Render("~/Scripts/modernizr/js")
+    @Styles.Render("~/Content/highlight/css")
+    @Styles.Render("~/Content/kendo/kendo.common.min.css")
+    @Styles.Render("~/Content/kendo/kendo.materialblack.min.css")
+    @*@Scripts.Render("~/Content/highlight/js")*@
+    <script src="@Url.Content("~/Content/jQuery/jquery-2.1.1.min.js")"></script>
+    <script src="@Url.Content("~/Content/jQuery/jquery-2.1.1.min.js")"></script>
+    <script src="@Url.Content("~/Content/jquery-ui/jquery-ui-1.10.2.custom.min.js")"></script>
+    @Scripts.Render("~/Scripts/kendo/kendo.all.min.js")
+    @Scripts.Render("~/Scripts/kendo/kendo.timezones.min.js")
+    @Scripts.Render("~/Scripts/kendo/kendo.aspnetmvc.min.js")
+    @Styles.Render("~/Content/flags/css")
+</head>
+<body class="login">
+    <div data-role="view" class="container body"></div>
+    @RenderBody()
+   
+    @*@Scripts.Render("~/Content/Gentelella/js")
+        @Scripts.Render("~/Scripts/TemplateInit")*@
+    <!-- jQuery -->
+    <script src="@Url.Content("~/Content/gentelella/vendors/jquery/dist/jquery.min.js")"></script>
+    <!-- Bootstrap -->
+    <script src="@Url.Content("~/Content/gentelella/vendors/bootstrap/dist/js/bootstrap.min.js")"></script>
+    <!-- FastClick -->
+    <script src="@Url.Content("~/Content/gentelella/vendors/fastclick/lib/fastclick.js")"></script>
+    <!-- NProgress -->
+    <script src="@Url.Content("~/Content/gentelella/vendors/nprogress/nprogress.js")"></script>
+    <!-- Chart.js -->
+    <script src="@Url.Content("~/Content/gentelella/vendors/Chart.js/dist/Chart.min.js")"></script>
+    <!-- gauge.js -->
+    <script src="@Url.Content("~/Content/gentelella/vendors/gauge.js/dist/gauge.min.js")"></script>
+    <!-- bootstrap-progressbar -->
+    <script src="@Url.Content("~/Content/gentelella/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js")"></script>
+    <!-- iCheck -->
+    <script src="@Url.Content("~/Content/gentelella/vendors/iCheck/icheck.min.js")"></script>
+    <!-- Skycons -->
+    <script src="@Url.Content("~/Content/gentelella/vendors/skycons/skycons.js")"></script>
+    <!-- Flot -->
+    <script src="@Url.Content("~/Content/gentelella/vendors/Flot/jquery.flot.js")"></script>
+    <script src="@Url.Content("~/Content/gentelella/vendors/Flot/jquery.flot.pie.js")"></script>
+    <script src="@Url.Content("~/Content/gentelella/vendors/Flot/jquery.flot.time.js")"></script>
+    <script src="@Url.Content("~/Content/gentelella/vendors/Flot/jquery.flot.stack.js")"></script>
+    <script src="@Url.Content("~/Content/gentelella/vendors/Flot/jquery.flot.resize.js")"></script>
+    <!-- Flot plugins -->
+    <script src="@Url.Content("~/Content/gentelella/vendors/flot.orderbars/js/jquery.flot.orderBars.js")"></script>
+    <script src="@Url.Content("~/Content/gentelella/vendors/flot-spline/js/jquery.flot.spline.min.js")"></script>
+    <script src="@Url.Content("~/Content/gentelella/vendors/flot.curvedlines/curvedLines.js")"></script>
+    <!-- DateJS -->
+    <script src="@Url.Content("~/Content/gentelella/vendors/DateJS/build/date.js")"></script>
+    <!-- JQVMap -->
+    <script src="@Url.Content("~/Content/gentelella/vendors/jqvmap/dist/jquery.vmap.js")"></script>
+    <script src="@Url.Content("~/Content/gentelella//vendors/jqvmap/dist/maps/jquery.vmap.world.js")"></script>
+    <script src="@Url.Content("~/Content/gentelella//vendors/jqvmap/examples/js/jquery.vmap.sampledata.js")"></script>
+    <!-- bootstrap-daterangepicker -->
+    <script src="@Url.Content("~/Content/gentelella/vendors/moment/min/moment.min.js")"></script>
+    <script src="@Url.Content("~/Content/gentelella/vendors/bootstrap-daterangepicker/daterangepicker.js")"></script>
+
+    <!-- Custom Theme Scripts -->
+    <script src="@Url.Content("~/Content/gentelella/build/js/custom.min.js")"></script>
+    @Scripts.Render("~/bundles/kendo")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,88 @@
+﻿@using TradingPlatformManagement.Models
+
+@model RegisterViewModel
+
+@{
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+    ViewBag.Title = "Register";
+}
+
+<div class="login_wrapper">
+    <div class="animate form login_form">
+        <section class="login_content">
+            <h1>@ViewBag.Title</h1>
+
+            @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+                @Html.AntiForgeryToken()
+                <h4>Create a new account.</h4>
+                <hr />
+                @Html.ValidationSummary("", new { @class = "text-danger" })
+                <div>
+                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = "Username" })
+                    @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                </div>
+                <div>
+                    @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = "Password" })
+                    @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                </div>
+                <div>
+                    @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control", placeholder = "Confirm password" })
+                    @Html.ValidationMessageFor(m => m.ConfirmPassword, "", new { @class = "text-danger" })
+                </div>
+                <div>
+                    @Html.DropDownListFor(x => x.Person.PersonTypeId, ViewBag.PersonTypes as SelectList, new { @class = "form-control" })
+                </div>
+                <br />
+                <div>
+                    @Html.TextBoxFor(m => m.Person.Name, new { @class = "form-control", placeholder = "Your First Name" })
+                </div>
+                <div>
+                    @Html.TextBoxFor(m => m.Person.LastName, new { @class = "form-control", placeholder = "Your Last Name" })
+                </div>
+                <div>
+                    @Html.TextBoxFor(m => m.Person.Patron, new { @class = "form-control", placeholder = "Your Patronymic (If exists)" })
+                </div>
+                <div>
+                    @Html.TextBoxFor(m => m.Person.Country.Name, new { @class = "form-control", placeholder = "Your country" })
+                </div>
+                <div>
+                    @Html.TextBoxFor(m => m.Person.Country.ISO, new { @class = "form-control", placeholder = "Your country ISO (Alpha-3)" })
+                </div>
+                <div>
+                    @Html.TextBoxFor(m => m.Person.Company.Name, new { @class = "form-control", placeholder = "Your company name" })
+                </div>
+                <div>
+                    @Html.TextBoxFor(m => m.Person.Company.FoundationDate, new { @class = "form-control", placeholder = "Your company found date" })
+                </div>
+                <div>
+                    @Html.TextBoxFor(m => m.Person.Company.KPP, new { @class = "form-control", placeholder = "Your company KPP" })
+                </div>
+                <div>
+                    @Html.TextBoxFor(m => m.Person.Company.INN, new { @class = "form-control", placeholder = "Your company INN" })
+                </div>
+                <div>
+                    @Html.TextBoxFor(m => m.Person.Company.OGRN, new { @class = "form-control", placeholder = "Your company OGRN" })
+                </div>
+                <div>
+                    @Html.TextBoxFor(m => m.Person.Company.AkkreditationDate, new { @class = "form-control", placeholder = "Your company Akkreditation date" })
+                </div>
+                <div style="text-align:center;">
+                    <input type="submit" class="btn btn-default" value="Register" />
+                </div>
+                <div class="clearfix"></div>
+                <br />
+                <div>
+                    <h2>Trading Platform Management </h2>
+                    <p>All rights reserved</p>
+                </div>
+            }
+        </section>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
