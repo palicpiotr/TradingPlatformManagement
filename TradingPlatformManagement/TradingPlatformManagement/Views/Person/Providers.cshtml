@@ -1,0 +1,55 @@
+﻿
+@{
+    ViewBag.Title = "Providers";
+}
+
+<script id="detail-tmpl" type="text/x-kendo-template">
+    <div class=""><b>Details:</b></div>
+    <div style="color:white;">Person first name: #: Company.Name#</div>
+    <div style="color:white;">Person patron: #: Company.AkkreditationDate#</div>
+    <div style="color:white;">ИНН: #: Company.INN#</div>
+    <div style="color:white;">КПП: #: Company.KPP#</div>
+    <div style="color:white;">ОГРН: #: Company.OGRN#</div>
+    <div style="color:white;">Аккредитована до: #: Company.FoundationDate#</div>
+    <div>Страна: #: Country.Name# <span class="flag flag-#: Country.ISO# flag-2x"></span> </div>
+
+</script>
+
+<h2>Providers</h2>
+
+
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="dashboard_graph">
+            <div>
+                @(Html.Kendo().Grid<TPM.DataAccessFramework.Models.PersonViewModel>()
+                                      .Name("biddingsGrid")
+                                      .Columns(columns =>
+                                      {
+                                          columns.Bound(c => c.PersonId).Visible(false);
+                                          columns.Bound(c => c.Name);
+                                          columns.Bound(c => c.LastName);
+                                          columns.Bound(c => c.Patron);
+                                      })
+                                      .DataSource(dataSource => dataSource
+                                      .Ajax()
+                                      .Model(model => model.Id(p => p.PersonId))
+                                      .Read(read => read.Action("GetCustomers", "Person"))
+                                      )
+                                      .Selectable(selectTable => selectTable
+                                      .Mode(GridSelectionMode.Single)
+                                      .Type(GridSelectionType.Row)
+                                      )
+                                      .Editable(editTable => editTable.Mode(GridEditMode.InLine))
+                                      .Pageable()
+                                      .Sortable()
+                                      .Filterable(ftb => ftb.Enabled(true))
+                                      .ColumnMenu()
+                                      .Resizable(r => r.Columns(true))
+                                      .ClientDetailTemplateId("detail-tmpl")
+                )
+            </div>
+        </div>
+    </div>
+</div>
+

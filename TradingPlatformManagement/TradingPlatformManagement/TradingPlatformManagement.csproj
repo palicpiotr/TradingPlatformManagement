@@ -5601,6 +5601,8 @@
     <Compile Include="Controllers\GovernmentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ImmutableController.cs" />
+    <Compile Include="Controllers\PersonController.cs" />
+    <Compile Include="Controllers\ProviderController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -6473,6 +6475,12 @@
     <Content Include="Views\CorporateStore\Index.cshtml" />
     <Content Include="Views\Government\Index.cshtml" />
     <Content Include="Views\Immutable\Index.cshtml" />
+    <Content Include="Views\Person\_Providers.cshtml" />
+    <Content Include="Views\Person\_Customers.cshtml" />
+    <Content Include="Views\Person\Customers.cshtml" />
+    <Content Include="Views\Person\Providers.cshtml" />
+    <Content Include="Views\Provider\Index.cshtml" />
+    <Content Include="Views\Provider\_Confirmation.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

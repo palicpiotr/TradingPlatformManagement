@@ -18,6 +18,8 @@ namespace TPM.DataModel.Models
         public Person()
         {
             this.Biddings = new HashSet<Bidding>();
+            this.CustomerBiddings = new HashSet<CustomerBidding>();
+            this.ProviderBiddings = new HashSet<ProviderBidding>();
         }
     
         public int PersonId { get; set; }
@@ -27,11 +29,17 @@ namespace TPM.DataModel.Models
         public int PersonTypeId { get; set; }
         public Nullable<int> CompanyId { get; set; }
         public Nullable<int> CountryId { get; set; }
+        public string UserId { get; set; }
     
+        public virtual AspNetUser AspNetUser { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Bidding> Biddings { get; set; }
         public virtual Company Company { get; set; }
         public virtual Country Country { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CustomerBidding> CustomerBiddings { get; set; }
         public virtual PersonType PersonType { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ProviderBidding> ProviderBiddings { get; set; }
     }
 }

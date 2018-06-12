@@ -5,7 +5,7 @@ namespace TPM.DataAccessFramework.Models
     {
         public int BiddingId { get; set; }
         public string Name { get; set; }
-        public int LotId { get; set; }
+        public LotViewModel Lot { get; set; }
         public PersonViewModel Person { get; set; }
         public int DocumentId { get; set; }
         public BiddingTypeViewModel BiddingType { get; set; }

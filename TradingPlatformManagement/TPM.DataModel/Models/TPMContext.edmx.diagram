@@ -10,32 +10,39 @@
         <EntityTypeShape EntityType="TradingPlatformManagementModel.AspNetRole" Width="1.5" PointX="5.75" PointY="10.875" />
         <EntityTypeShape EntityType="TradingPlatformManagementModel.AspNetUserClaim" Width="1.5" PointX="10.25" PointY="10.875" />
         <EntityTypeShape EntityType="TradingPlatformManagementModel.AspNetUserLogin" Width="1.5" PointX="10.25" PointY="8.25" />
-        <EntityTypeShape EntityType="TradingPlatformManagementModel.AspNetUser" Width="1.5" PointX="8" PointY="8.25" />
         <EntityTypeShape EntityType="TradingPlatformManagementModel.AspNetUserToken" Width="1.5" PointX="5.75" PointY="0.75" />
-        <EntityTypeShape EntityType="TradingPlatformManagementModel.Bidding" Width="1.5" PointX="3" PointY="3.125" />
         <EntityTypeShape EntityType="TradingPlatformManagementModel.BiddingType" Width="1.5" PointX="0.75" PointY="9.125" />
         <EntityTypeShape EntityType="TradingPlatformManagementModel.Company" Width="1.5" PointX="3.75" PointY="8.125" />
         <EntityTypeShape EntityType="TradingPlatformManagementModel.Country" Width="1.5" PointX="0.75" PointY="4.25" />
         <EntityTypeShape EntityType="TradingPlatformManagementModel.Document" Width="1.5" PointX="0.75" PointY="11.5" />
-        <EntityTypeShape EntityType="TradingPlatformManagementModel.Lot" Width="1.5" PointX="0.75" PointY="16.5" />
-        <EntityTypeShape EntityType="TradingPlatformManagementModel.Person" Width="1.5" PointX="6" PointY="3.625" />
+        <EntityTypeShape EntityType="TradingPlatformManagementModel.Lot" Width="1.5" PointX="13.25" PointY="15.5" />
         <EntityTypeShape EntityType="TradingPlatformManagementModel.PersonType" Width="1.5" PointX="3.75" PointY="0.75" />
-        <EntityTypeShape EntityType="TradingPlatformManagementModel.Protocol" Width="1.5" PointX="0.75" PointY="20.25" />
+        <EntityTypeShape EntityType="TradingPlatformManagementModel.Protocol" Width="1.5" PointX="11.875" PointY="8.125" />
         <EntityTypeShape EntityType="TradingPlatformManagementModel.sysdiagram" Width="1.5" PointX="7.75" PointY="0.75" />
         <EntityTypeShape EntityType="TradingPlatformManagementModel.TenderType" Width="1.5" PointX="0.75" PointY="14" />
         <AssociationConnector Association="TradingPlatformManagementModel.FK_AspNetRoleClaims_AspNetRoles_RoleId" />
-        <AssociationConnector Association="TradingPlatformManagementModel.FK_AspNetUserClaims_AspNetUsers_UserId" />
-        <AssociationConnector Association="TradingPlatformManagementModel.FK_AspNetUserLogins_AspNetUsers_UserId" />
+        <EntityTypeShape EntityType="TradingPlatformManagementModel.Bidding" Width="1.5" PointX="13.25" PointY="10.25" />
+        <EntityTypeShape EntityType="TradingPlatformManagementModel.CustomerBidding" Width="1.5" PointX="15.5" PointY="4.75" />
+        <EntityTypeShape EntityType="TradingPlatformManagementModel.ProviderBidding" Width="1.5" PointX="15.5" PointY="7.75" />
         <AssociationConnector Association="TradingPlatformManagementModel.FK_Biddings_BiddingTypes" />
         <AssociationConnector Association="TradingPlatformManagementModel.FK_Biddings_Countries" />
         <AssociationConnector Association="TradingPlatformManagementModel.FK_Biddings_Documents" />
         <AssociationConnector Association="TradingPlatformManagementModel.FK_Biddings_Lots" />
-        <AssociationConnector Association="TradingPlatformManagementModel.FK_Biddings_Persons" />
         <AssociationConnector Association="TradingPlatformManagementModel.FK_Biddings_Protocols" />
         <AssociationConnector Association="TradingPlatformManagementModel.FK_Biddings_TenderTypes" />
+        <AssociationConnector Association="TradingPlatformManagementModel.FK_CustomerBiddings_Biddings" />
+        <AssociationConnector Association="TradingPlatformManagementModel.FK_ProviderBiddings_Biddings" />
+        <EntityTypeShape EntityType="TradingPlatformManagementModel.AspNetUser" Width="1.5" PointX="8" PointY="7.625" />
+        <EntityTypeShape EntityType="TradingPlatformManagementModel.Person" Width="1.5" PointX="10.25" PointY="2.625" />
+        <AssociationConnector Association="TradingPlatformManagementModel.FK_AspNetUserClaims_AspNetUsers_UserId" />
+        <AssociationConnector Association="TradingPlatformManagementModel.FK_AspNetUserLogins_AspNetUsers_UserId" />
+        <AssociationConnector Association="TradingPlatformManagementModel.FK_Persons_AspNetUsers" />
+        <AssociationConnector Association="TradingPlatformManagementModel.FK_Biddings_Persons" />
         <AssociationConnector Association="TradingPlatformManagementModel.FK_Persons_Companies" />
         <AssociationConnector Association="TradingPlatformManagementModel.FK_Persons_Countries" />
+        <AssociationConnector Association="TradingPlatformManagementModel.FK_CustomerBiddings_Persons" />
         <AssociationConnector Association="TradingPlatformManagementModel.FK_Persons_PersonTypes" />
+        <AssociationConnector Association="TradingPlatformManagementModel.FK_ProviderBiddings_Persons" />
         <AssociationConnector Association="TradingPlatformManagementModel.AspNetUserRoles" />
       </Diagram>
     </edmx:Diagrams>

@@ -1,0 +1,29 @@
+﻿@using TPM.DataAccessFramework.Models
+
+@model BiddingViewModel
+
+@{
+    Layout = null;
+}
+
+<div class="container">
+    <h2>Вы хотите принять участие в следующем аукционе?</h2>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div>
+                Торг: @Model.Name
+            </div>
+            <div>
+                Лот: @Model.Lot.Name
+            </div>
+            <div>
+                Тендер: @Model.TenderType.Name
+            </div>
+        </div>      
+    </div>
+    <div class="pull-right">
+        <button type="button" class="btn btn-info">Confirm</button>
+        <button type="button" class="btn btn-dark" onclick="closeWindow()">Cancel</button>
+    </div>
+</div>
+
